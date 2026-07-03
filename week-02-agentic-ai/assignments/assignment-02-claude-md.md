@@ -4,10 +4,10 @@
 
 ## 1. Assignment Overview
 
-**Assignment:** CLAUDE.md
-**Estimated Time:** 60 minutes
-**Difficulty:** Beginner
-**Category:** Agentic AI, Project Context
+**Assignment:** CLAUDE.md              
+**Estimated Time:** 60 minutes                
+**Difficulty:** Beginner                  
+**Category:** Agentic AI, Project Context                    
 
 ---
 
