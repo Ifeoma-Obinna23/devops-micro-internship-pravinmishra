@@ -20,7 +20,7 @@ Create the `.claude/agents/` directory and add all required agent files.
 
 #### Screenshot 1 — VS Code sidebar showing `.claude/agents/` with all 3 files
 
-Add your screenshot here.
+![alt text](screenshots/.claude-subagents-sidebar.png)
 
 ---
 
@@ -34,19 +34,25 @@ Analyze the configuration differences between the three agents and demonstrate u
 
 #### 1. Why does the cost optimizer use Haiku instead of Sonnet?
 
-Add your answer here...
+A cost-optimizer agent likely does things like: scan files for expensive API calls, check config values, flag unused resources, sum up numbers, or pattern-match against a checklist. That kind of "look and report" work doesn't need deep reasoning — it needs speed and low cost. Haiku is cheaper and faster. Infact it only costs a fraction of what sonnet costs per token and responds much faster.
 
 ---
 
 #### 2. Why does the security auditor NOT have Write in its tools list?
 
-Add your answer here...
+A security-auditor's job is to find and report problems, not fix them. Leaving Write (and usually Edit) off its tools list means the agent is physically incapable of changing any files, no matter what it "decides" to do mid-task.
+Some reasons behind it:
+1- Least privilege. The general rule for any subagent: give it only the tools it actually needs to do its job. A security auditor needs to read code (Read, Grep, Glob) and maybe run analysis commands (Bash), but it never needs to modify anything. So Write/Edit are left out on purpose.
+2- Safety net against mistakes or bad instructions. If the auditor's system prompt is ever ambiguous, or if it gets fed a malicious file that tries to trick it into "fixing" something it read, not having Write access means the worst it can do is report a wrong recommendation — it can't actually overwrite your code. This is especially important for an agent that reads through a lot of files, including possibly untrusted ones.
+
 
 ---
 
 #### 3. Why does the tf-writer use `inherit` instead of a specific model?
 
-Add your answer here...
+inherit means "don't lock this agent to a fixed model — just use whatever model the main conversation is currently running on." It's a different design choice from the cost-optimizer (fixed to Haiku) and security-auditor and it makes sense for a tf-writer agent specifically. The reasons are:
+What inherit actually does:
+When Claude Code resolves a subagent's model, it checks (in priority order): the CLAUDE_CODE_SUBAGENT_MODEL env var → a per-invocation model override → the subagent's own model: field in frontmatter. If that field says inherit (or is left out entirely, since inherit is the default), it falls through to whatever model the main session is using. Run session on Opus → tf-writer runs on Opus. Switch the session to Sonnet → tf-writer runs on Sonnet automatically.
 
 ---
 
@@ -54,13 +60,13 @@ Add your answer here...
 
 #### Screenshot 2 — `security-auditor.md` frontmatter showing model and tools configuration
 
-Add your screenshot here.
+![alt text](screenshots/Security-auditor.png)
 
 ---
 
 #### Screenshot 3 — `cost-optimizer.md` frontmatter showing the model and tools configuration
 
-Add your screenshot here.
+![alt text](screenshots/Cost-optimizer.png)
 
 ---
 
@@ -74,13 +80,12 @@ Trigger the security auditor agent and analyze the generated security report for
 
 #### Screenshot 4 — The delegation message showing Claude launched the security-auditor
 
-Add your screenshot here.
-
+![alt text](screenshots/security-audited-report.png)
 ---
 
 #### Screenshot 5 — Security audit report output
 
-Add your screenshot here.
+![alt text](screenshots/security-audited-report2.png)
 
 ---
 
@@ -94,7 +99,9 @@ Trigger the cost optimizer agent and review the generated cost optimization repo
 
 #### Screenshot 6 — The full cost optimization report
 
-Add your screenshot here.
+![alt text](screenshots/tf-review-for-cost-opt.png)
+
+![alt text](screenshots/tf-review-for-cost-opt2.png)
 
 ---
 
@@ -110,7 +117,7 @@ Add your screenshot here.
 
 Paste your forked repository URL here:
 
-`__________________________`
+https://github.com/Ifeoma-Obinna23/Ultimate-Agentic-DevOps-with-Claude-Code.git
 
 ---
 

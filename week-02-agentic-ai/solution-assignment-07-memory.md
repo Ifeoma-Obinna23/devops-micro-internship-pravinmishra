@@ -20,7 +20,7 @@ Identify where Claude Code stores memory for this project.
 
 #### Screenshot 1 — Memory file path shown by Claude
 
-Add your screenshot here.
+![alt text](screenshots/memory-path.png)
 
 ---
 
@@ -34,15 +34,15 @@ Store project-specific rules and configurations into Claude’s memory and verif
 
 #### Screenshot 2 — Claude confirming the memory was saved
 
-Add your screenshot here.
+![alt text](screenshots/memory-content-saved.png)
 
 ---
 
 #### Screenshot 3 — The `MEMORY.md` file open in VS Code showing the saved content
 
-Add your screenshot here.
+![alt text](screenshots/MEMORY.md.png)
 
----
+![alt text](screenshots/design_constraints.MEM.md.png)
 
 # Task 3 — Close the Session Completely
 
@@ -54,8 +54,7 @@ Terminate the current Claude Code session and restart it to ensure memory is the
 
 #### Screenshot 4 — VS Code reopened with a fresh Claude Code session showing no previous conversation
 
-Add your screenshot here.
-
+![alt text](screenshots/vscode-reopened.png)
 ---
 
 # Task 4 — Prove Memory Recall Across Sessions
@@ -68,15 +67,15 @@ Verify that Claude correctly recalls stored memory after a full session reset.
 
 #### Screenshot 5 — Claude recalling hero section colors
 
-Add your screenshot here.
+![alt text](screenshots/Claude-recalling-section-color.png)
 
 ---
 
 #### Screenshot 6 — Claude refusing JavaScript request based on memory rule
 
-Add your screenshot here.
+![alt text](screenshots/Claude-refusal-javascript.png)
 
----
+
 
 # Submission Instructions
 
@@ -91,8 +90,7 @@ Add your screenshot here.
 
 Paste your forked repository URL here:
 
-`__________________________`
-
+https://github.com/Ifeoma-Obinna23/Ultimate-Agentic-DevOps-with-Claude-Code.git
 ---
 
 # Completion Checklist

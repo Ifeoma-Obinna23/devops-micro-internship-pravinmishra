@@ -46,7 +46,7 @@ You can publish your blog on:
 
 #### Screenshot 1 — Blog published and visible
 
-Add your screenshot here.
+![alt text](screenshots/My-Medium-post.png)
 
 ---
 
@@ -54,7 +54,7 @@ Add your screenshot here.
 
 Blog Link:
 
-`__________________________________________`
+`________https://medium.com/@ifeomaohachosim/my-first-light-bulb-moment-with-agentic-ai-why-my-cost-saving-bot-uses-the-cheaper-brain-this-70a9261129ba?
 
 ---
 
@@ -92,7 +92,7 @@ P.S. This post is a part of DevOps Micro Internship with Agentic AI Cohort-3 by 
 
 #### Screenshot 2 — LinkedIn post published
 
-Add your screenshot here.
+![alt text](screenshots/LinkedIn-week2-agentic-ai.png)
 
 ---
 
@@ -101,14 +101,32 @@ Add your screenshot here.
 LinkedIn Post Content (copy-paste here):
 
 ```
-Paste your LinkedIn post content here
+My First "light-bulb" moment with Agentic AI: Why My Cost-Saving Bot Uses the "Cheaper" Brain
+This is a beginner's note from my DevOps and Agentic AI journey
+I'm new to Agentic AI, and I'm learning out loud, one baby step at a time. Here's a small discovery that taught me a bigger lesson.
+The Question That Started It All
+While exploring Claude Code, I noticed something in my setup: a small AI "agent", like a mini-assistant with one job called a cost optimizer. Its role is to watch for wasteful spending and flag ways to cut costs.
+But it wasn't using the "smartest" AI model available (I found out after asking more why questions). It was set up to use a smaller, faster, cheaper one instead.
+My first thought: shouldn't the smartest model handle everything? Then it clicked.
+Think of AI Models Like a Team, Not One Superhero
+You wouldn't hire your most expensive senior engineer to do basic, repetitive admin work. You'd give them the hard, high-stakes problems and let a capable junior teammate handle the simple, repeatable stuff.
+AI agents work the same way:
+A bigger, more powerful model is like your senior engineer great at deep reasoning and nuance, but slower and pricier to run.
+A smaller, lighter model is like a sharp junior teammate, can't solve every complex puzzle, but fast, cheap, and reliable for clear, well-defined instructions.
+My cost-optimizer agent's job is scanning for spending patterns and flagging obvious issues. It doesn't need deep reasoning. It just needs speed and consistency. So using the smaller model made perfect sense. There's even a nice irony in it: an agent built to save money is itself built to be cheap to run.
+Why This Matters for Automation and Deployment
+This connects straight back to DevOps. We're always trying to build systems that are efficient and don't waste resources and Agentic AI brings that same thinking into how we use AI itself.
+An "agent" is simply an AI given a specific job, the tools to do it, and instructions on how to behave. Instead of using one giant, expensive model for everything, you can build a small team of specialized agents each matched to the difficulty of its task. Hard, judgment-heavy work goes to a stronger model. Routine work goes to a lighter one.
+Efficient automation isn't just about doing tasks automatically, it's about using the right amount of "brainpower" for the job.
+My Takeaway as a Beginner
+I'm still connecting dots one at a time, but this small technical detail taught me a bigger lesson about thoughtful automation. My advice to fellow beginners: stay curious about the small decisions, not just the flashy features. Sometimes the best lessons are hiding in a single line of a config file.
 ```
 
 ---
 
 ### LinkedIn Post Link:
 
-`__________________________________________`
+https://www.linkedin.com/posts/ifeoma-akabueze_dmibypravinmishra-agenticai-claudecode-share-7481470277881831425-sbBD/?utm_source=share&utm_medium=member_desktop&rcm=ACoAACrL1kMBDufqWGsFnOaK7ikfsLJv6wdD64c
 
 ---
 
