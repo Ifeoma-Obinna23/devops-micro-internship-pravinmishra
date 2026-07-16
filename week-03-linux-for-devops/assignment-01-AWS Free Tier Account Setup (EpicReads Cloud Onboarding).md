@@ -20,19 +20,25 @@ Demonstrate understanding of AWS basics and Free Tier usage by answering the fol
 
 #### Question 1 — What is an AWS account, and why do you need it at this stage?
 
-Write your answer here.
+AWS account is an account is a personal or organizational account that gives one access to AWS(Amazon Web Services) services where we can build, deploy and manage applications and provision cloud infrastructure. We need an AWS account to be able to access its cloud services like the Elastic Compute Cloud(EC2) that will will use to be able to provision our virtual server where we can deploy and host our React application we want to build. The AWS account created also gives us access to other cloud resources we may need throughout the project.
 
 ---
 
 #### Question 2 — What is AWS Free Tier, and how long does it last?
 
-Write your answer here.
+AWS Free Tier is a program offered by Amazon Web Services that allows new users to access and use selected AWS services free of charge within specified usage limits. It is designed to help users learn, experiment, and build applications without incurring costs, provided they stay within the Free Tier limits.
+The AWS Free Tier for new customers lasts for 12 months from the date the AWS account is created. However, some services are always free, while others offer short-term free trials. It is important to monitor usage because exceeding the Free Tier limits or using services that are not covered will result in charges.
 
 ---
 
 #### Question 3 — Name three AWS Free Tier services and their free usage limits.
 
-Write your answer here.
+1. Amazon EC2 (Elastic Compute Cloud)
+  750 hours per month, enough to run one instance 24/7, using a t2.micro or t3.micro instance type (1 vCPU, 1 GB RAM) depending on region. This falls under the 12-month free tier for eligible accounts rather than  the "always free" category.
+2. Amazon S3 (Simple Storage Service)
+  5 GB of standard storage, 20,000 GET requests, and 2,000 PUT requests per month. CloudWebSchool
+3. AWS Lambda
+  1 million requests and 400,000 GB-seconds of compute per month — this one's in the "Always Free" category, meaning it doesn't expire after 12 months
 
 ---
 
@@ -56,9 +62,7 @@ Confirm that your AWS account setup is complete by navigating to the Account sec
 
 #### Screenshot 1 — AWS Account page showing account name (email may be blurred)
 
-Add your screenshot here.
-
----
+![alt text](<screenshots/AWS account page.png>)
 
 # Submission Instructions
 
