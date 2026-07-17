@@ -20,13 +20,15 @@ Confirm that Nginx and the React application are healthy before building the aut
 
 #### Screenshot 1 — Output of `systemctl is-active nginx`, `ss -ltn | grep ':80'`, and `curl -I http://localhost`
 
-Add your screenshot here.
+![alt text](screenshots/systemctl-active-ass6.png)
+![alt text](screenshots/curl-l-200-OK-ass6.png)
 
 ---
 
 #### Screenshot 2 — Output of `pwd` and `find . -maxdepth 4 -type d | sort` showing the workspace folder structure
 
-Add your screenshot here.
+![alt text](screenshots/find-maxdepth-ass6.png)
+![alt text](screenshots/pwd-ass5.png)
 
 ---
 
@@ -36,19 +38,36 @@ Answer the following in your own words:
 
 **1. What proves that Nginx is running?**
 
-Add your answer here.
+ Service status using the command
+systemctl is-active nginx and it returns active
+
+systemctl status nginx
+Confirm it's actually listening on a port
+
+sudo ss -tulpn | grep nginx
+This shows Nginx is bound to port 80 (or 443), proving it's ready to accept connections, not just "running" in the abstract.
+
+Test it locally on the server itself
+bashcurl -I http://localhost
+A HTTP/1.1 200 OK response is strong proof the web server is actually serving content, not just alive as a process..
 
 ---
 
 **2. What proves that the server is listening for HTTP traffic?**
 
-Add your answer here.
+systemctl status nginx
+Confirm it's actually listening on a port
 
 ---
 
 **3. Why must you capture a healthy baseline before simulating an incident?**
 
-Add your answer here.
+One should or must capture a healthy baseline before simulating an incident. If you simulate an incident (kill a process, fill up disk space, spike CPU, etc.) without first capturing what the system looked like before, you have no reference point. Every observation during the incident becomes a guess: "is this metric high because of the incident, or was it always like this?".
+ Prevents chasing pre-existing issues
+Sometimes a system already has a lingering problem (a warning in logs, a slow response time) that has nothing to do with the incident you're about to simulate. Without a baseline, you might waste time investigating something that was already there, mistakenly attributing it to your test.
+Makes the results measurable, not just descriptive
+"Response time increased" means little on its own. "Response time went from 50ms (baseline) to 4000ms (during incident)" is concrete, provable, and demonstrates the actual severity of what you simulated.
+
 
 ---
 
@@ -62,7 +81,7 @@ Tell Claude exactly what this project does and what it is not allowed to do.
 
 #### Screenshot 3 — CLAUDE.md open in VS Code showing all four sections (Project Overview, Incident Workflow, Safety Rules, Output Rules)
 
-Add your screenshot here.
+![alt text](screenshots/CLAUDE.md-ass6.png)
 
 ---
 
@@ -72,19 +91,28 @@ Answer the following in your own words:
 
 **1. Why should Claude receive project-specific operational rules?**
 
-Add your answer here.
+With explicit operational rules, Claude's role shifts from "autonomous fixer" to "evidence-based advisor":
+
+Gather evidence → analyze it → recommend a fix → let the human decide
+
+This is safer specifically because a human stays in control of anything that changes the system, while still getting the benefit of Claude's analysis speed.
 
 ---
 
 **2. Why is the human required to execute the recovery command?**
 
-Add your answer here.
+Claude can analyze evidence and suggest what it believes is the right fix, but it can still be wrong — misreading a report, missing context about the environment, or recommending a command that's technically correct but has side effects it doesn't know about (like restarting Nginx during a moment when someone's mid-transaction, or on a server that's shared with other people/projects).
+A human, who understands the broader context the AI doesn't have, needs to be the one who reviews that recommendation and decides whether it's actually safe to run right now, in this specific situation.
 
 ---
 
+
+
+
 **3. Which rule prevents Claude from making an unsupported diagnosis?**
 
-Add your answer here.
+# Safety Rule: 
+Do not claim a root cause unless the report contains supporting evidence
 
 ---
 
@@ -98,7 +126,8 @@ Use Claude Code to inspect the environment and produce a read-only plan before c
 
 #### Screenshot 4 — Claude Code showing the five-check plan and read-only inspection results
 
-Add your screenshot here.
+![alt text](screenshots/Claude.Readonly-ass6.png)
+![alt text](screenshots/claude.Readonly2-ass6.png)
 
 ---
 
@@ -108,19 +137,46 @@ Answer the following in your own words:
 
 **1. Which part of this task represents the Gather phase?**
 
-Add your answer here.
+1. Nginx service status
+systemctl is-active nginx
+- Healthy: prints active, exit code 0
+- Failed: prints inactive, failed, or Nginx is not running
+
+2. Port 80 listening state
+ss -ltn | grep ':80 '
+- Healthy: a line showing LISTEN with local address *:80 or 0.0.0.0:80
+- Failed: no output — nothing is bound to accept HTTP connections even if Nginx claims to be active
+
+3. Localhost HTTP response
+curl -I http://localhost
+- Healthy: first line HTTP/1.1 200 OK
+- Failed: connection refused/timed out, or a 5xx status — the server process isn't answering requests even if the OS-level port check passes
+
+4. Root disk usage
+df -h /
+- Healthy: Use% comfortably below a warning threshold (e.g. under ~80%)
+- Failed/Warn: Use% at or above threshold — a full disk can block Nginx from writing logs, PID files, or serving app assets
+
+5. Available memory
+free -h
+- Healthy: available column shows a healthy amount (e.g. well above ~10–15% free)
+- Failed/Warn: available very low and/or swap heavily used — memory pressure can cause Nginx or the app to be OOM-killed
 
 ---
 
 **2. Did Claude follow the instruction not to create files? How did you verify this?**
 
-Add your answer here.
+Yes, Claude followed the instruction. Here's how you can verify it from the output itself:
+Evidence in the transcript
+The explicit closing statement
+No files were created or edited.
+Claude states this directly at the end — a clear self-report confirming compliance.
 
 ---
 
 **3. Why is planning before coding useful in DevOps automation?**
 
-Add your answer here.
+Planning before coding is useful because it lets you catch mistakes, missing context, and risky assumptions before they can cause actual harm to a live system — which is a much higher-stakes situation than a typical coding bug.
 
 ---
 
@@ -134,26 +190,25 @@ Create one Bash script that gathers consistent Linux and Nginx health evidence.
 
 #### Screenshot 5 — Top section of `linux-triage.sh` showing variables, thresholds, and the checks array
 
-Add your screenshot here.
 
+![alt text](screenshots/linux-triage-ass6.png)
 ---
 
 #### Screenshot 6 — Middle section showing check functions and conditionals
 
-Add your screenshot here.
+![alt text](screenshots/middle-triage-function-ass6.png)
 
 ---
 
 #### Screenshot 7 — Bottom section showing the loop, summary function, and exit behavior
 
-Add your screenshot here.
+![alt text](screenshots/bottom-section-triage-ass6.png)
 
 ---
 
 #### Screenshot 8 — Output of `bash -n scripts/linux-triage.sh` (no syntax errors) and `ls -l scripts/linux-triage.sh` showing executable permission
 
-Add your screenshot here.
-
+![alt text](screenshots/linux-triage-sh-ass6.png)
 ---
 
 ### Notes
@@ -162,31 +217,30 @@ Answer the following in your own words:
 
 **1. What is stored in the checks array?**
 
-Add your answer here.
+The checks array stores the names of five functions 
 
 ---
 
 **2. How does the `for` loop use that array?**
 
-Add your answer here.
+The for loop takes each function name stored in the checks array and runs it as an actual command, one at a time — this is what actually executes all five health checks in your script
 
 ---
 
 **3. Why are the health checks separated into functions?**
 
-Add your answer here.
+Separating each health check into its own function keeps the script organized, reusable, and easy to modify — the same core benefits of functions.
 
 ---
 
 **4. What is the purpose of `$(...)` in this script?**
 
-Add your answer here.
-
+$(...) is called command substitution — it runs the command inside the parentheses, and replaces $(...) with whatever that command outputs (its printed result), so the output can be stored in a variable or used inline.
 ---
 
 **5. Why does the script use different exit codes for HEALTHY, WARN, and FAIL?**
 
-Add your answer here.
+Different exit codes let anything calling this script — another script, a cron job, a CI/CD pipeline, or a human checking $? — know the outcome without having to read or parse the actual report text. The exit code alone tells you the severity of the result.
 
 ---
 
@@ -200,13 +254,14 @@ Run the Bash script against the healthy server and verify that it creates a repo
 
 #### Screenshot 9 — Output of `./scripts/linux-triage.sh` showing your Full Name and all five check results
 
-Add your screenshot here.
+![alt text](screenshots/output-linux-triage-ass6.png)
 
 ---
 
 #### Screenshot 10 — Output showing the captured exit code and final summary
 
-Add your screenshot here.
+![alt text](screenshots/captured-exit-code-ass6.png)
+![alt text](screenshots/final-summary-ass6.png)
 
 ---
 
@@ -216,25 +271,36 @@ Answer the following in your own words:
 
 **1. What is the overall status of your healthy baseline?**
 
-Add your answer here.
+The overall status is HEALTHY, confirmed by multiple consistent signals in the report.
+The direct answer
+Summary:
+PASS: 5
+WARN: 0
+FAIL: 0
+Overall Status: HEALTHY
+Script Exit Code: 0
 
 ---
 
 **2. Which exact Linux evidence proves the application is serving traffic?**
 
-Add your answer here.
+The exact line is:
+[PASS] Local HTTP check returned status 200
 
 ---
 
 **3. Did your script return exit code 0 or 1? Explain why.**
 
-Add your answer here.
+My script returned exit code 0, confirmed directly in your terminal output:
+Captured Exit Code: 0
+and echoed again inside the report itself:
+Script Exit Code: 0
 
 ---
 
 **4. What is the difference between a warning and a failure in this script?**
 
-Add your answer here.
+The difference comes down to severity — a warning means something is trending toward a problem but isn't broken yet, while a failure means something is actually broken right now. The script encodes this distinction through separate thresholds, separate counters, and separate exit codes.
 
 ---
 
@@ -248,7 +314,7 @@ Turn the Bash script into a reusable, manually invoked Agentic AI workflow.
 
 #### Screenshot 11 — `SKILL.md` showing the frontmatter, allowed tool restrictions, and safety rules
 
-Add your screenshot here.
+![alt text](screenshots/SKILL.md-ass6.png)
 
 ---
 
