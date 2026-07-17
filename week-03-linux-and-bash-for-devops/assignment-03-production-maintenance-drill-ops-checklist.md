@@ -391,13 +391,13 @@ Cloud providers like AWS charge for resources based on usage time, so an EC2 ins
 
 Paste your LinkedIn post URL here:
 
-`Add your URL here`
+https://www.linkedin.com/posts/ifeoma-akabueze_dmibypravinmishra-agenticai-claudecode-ugcPost-7483600565470633984-Kx_d/?
 
 ---
 
 #### Screenshot — Published LinkedIn post
 
-Add your screenshot here.
+![alt text](screenshots/LinkedIn-post-on-prod-maintenance.png)
 
 ---
 
