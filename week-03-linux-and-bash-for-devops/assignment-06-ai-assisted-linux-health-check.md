@@ -330,25 +330,25 @@ Answer the following in your own words:
 
 **1. Why does this skill have Bash, Read, and Grep, but not Write?**
 
-Add your answer here.
+The skill only needs to run the script and read/search the resulting report; leaving out Write makes it technically impossible for the skill to modify or create files, enforcing the read-only rule at the permission level.
 
 ---
 
 **2. Why is `disable-model-invocation: true` useful for this skill?**
 
-Add your answer here.
+It stops Claude from deciding to run this skill on its own; it only runs when you explicitly type /linux-triage, keeping a human in control of when the investigation happens.
 
 ---
 
 **3. What part is performed by Bash, and what part is performed by Claude?**
 
-Add your answer here.
+Bash does the Gather phase (running commands, writing raw evidence to the report). Claude does the Analyze phase (reading the report, interpreting it, identifying a likely cause, suggesting a recovery step).
 
 ---
 
 **4. Why is this better than asking Claude "Is my server healthy?" without giving it evidence?**
 
-Add your answer here.
+Without evidence, Claude would be guessing from general knowledge with no real visibility into your server; with the Bash report as grounding, every claim is tied to actual current data instead of assumption.
 
 ---
 
@@ -362,14 +362,13 @@ Create a controlled service failure, gather evidence through Bash, and let Claud
 
 #### Screenshot 13 — Output showing Nginx is inactive and the HTTP request fails
 
-Add your screenshot here.
+![alt text](screenshots/NGINX-inactive-ass6.png)
 
 ---
 
 #### Screenshot 14 — `/linux-triage` output showing failed evidence, most likely cause, and a suggested recovery command
 
-Add your screenshot here.
-
+![alt text](screenshots/linux-triagr-ass6.png)
 ---
 
 #### Screenshot 15 — `incident-failure-report.txt` showing the failed checks and your Full Name
