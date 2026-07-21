@@ -378,6 +378,7 @@ Looking back, her journey proved that success is rarely an overnight event. It i
 ## 10. Proof of Work
 
 - LinkedIn Post URL: https://www.linkedin.com/posts/ifeoma-akabueze_i-was-asked-to-write-about-my-life-in-3-7-share-7478849190475829250-Frx6/?  
+
 - Blog / Medium : https://medium.com/@ifeomaohachosim/the-woman-who-prepared-before-the-opportunity-arrived-0382de924903?postPublishedType=initial  
 
 ---
