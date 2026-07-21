@@ -20,13 +20,13 @@ Create a `CodeTrack` project folder and initialize it as a Git repository.
 
 #### Screenshot 1 — Output of `git init` inside `CodeTrack` showing "Initialized empty Git repository"
 
-Add your screenshot here.
+![alt text](screenshots/git-init-Git-ass.png)
 
 ---
 
 #### Screenshot 2 — Output of `ls -a` showing the `.git` folder
 
-Add your screenshot here.
+![alt text](screenshots/git-la-a-git-ass1.png)
 
 ---
 
@@ -34,7 +34,20 @@ Add your screenshot here.
 
 **1. What is the `.git` folder, and why does it matter?**
 
-Add your answer here.
+The .git folder is a hidden directory that Git automatically creates inside a project when you run git init. It's the actual database and engine of the repository — everything Git needs to track your project's history lives inside it, including:
+Commit history — every snapshot you've ever committed
+Branches — pointers to different lines of development
+Config settings — like the local user.name and user.email we just set
+The object store — compressed versions of every file at every committed state
+HEAD — a reference to what commit/branch you're currently on
+Staging area info — what's queued up for the next commit
+
+It matters because it's what actually turns an ordinary folder into a Git repository. Without .git, your CodeTrack folder is just a regular folder — Git isn't tracking anything, and commands like git status, git add, or git commit won't work.
+
+It is important to note that
+
+You never manually edit files inside .git — you interact with it only through git commands.
+If you delete .git, you lose all version history for the project (the actual files remain, but they're no longer tracked).
 
 ---
 
@@ -48,7 +61,7 @@ Set your Git username and email for the `CodeTrack` repository only, using `git 
 
 #### Screenshot 3 — Output of `git config --local --list` showing your `user.name` and `user.email`
 
-Add your screenshot here.
+![alt text](screenshots/git-config-local-list-ass1.png)
 
 ---
 
@@ -62,7 +75,7 @@ Set a global Git username and email for this machine using `git config --global`
 
 #### Screenshot 4 — Output of `git config --global --list` showing your `user.name` and `user.email`
 
-Add your screenshot here.
+![alt text](screenshots/git-config-global-list-ass1.png)
 
 ---
 

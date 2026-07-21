@@ -373,7 +373,7 @@ Create a controlled service failure, gather evidence through Bash, and let Claud
 
 #### Screenshot 15 — `incident-failure-report.txt` showing the failed checks and your Full Name
 
-Add your screenshot here.
+![alt text](screenshots/Incident-failure-report.ass6.png)
 
 ---
 
@@ -383,31 +383,33 @@ Answer the following in your own words:
 
 **1. Which three checks failed?**
 
-Add your answer here.
+Nginx service status.
+Port 80 listening.
+And the local HTTP check.
 
 ---
 
 **2. What evidence supports the conclusion that Nginx is unavailable?**
 
-Add your answer here.
+The report shows [FAIL] Nginx service is not active, [FAIL] Port 80 is not listening, and [FAIL] Local HTTP check returned status 000. The journal logs confirm Nginx was cleanly stopped ("Deactivated successfully") at 22:46:34, one minute after starting — a deliberate stop, not a crash.
 
 ---
 
 **3. Did Claude execute the recovery command? Why is that important?**
 
-Add your answer here.
 
----
+
+No! Claude recommended sudo systemctl start nginx but stated no action was taken, asking me (the human) to review and run it manually. This keeps a person in control of any real change to the system, avoiding risk from an AI acting on a diagnosis that could be incomplete or wrong.
 
 **4. Which phase of the Agentic Loop is represented by the Bash report?**
 
-Add your answer here.
+The Gather phase — raw evidence collection with no interpretation
 
 ---
 
 **5. Which phase is represented by Claude's explanation?**
 
-Add your answer here.
+The Analyze phase: By interpreting the gathered evidence to identify a likely cause and propose next steps.
 
 ---
 
@@ -421,25 +423,25 @@ Recover the service as the human operator and prove that the system is healthy a
 
 #### Screenshot 16 — Output showing Nginx is active and `curl -I http://localhost` returns 200 OK
 
-Add your screenshot here.
+![alt text](screenshots/Nginx-active-localhost-200OK-ass6.png)
 
 ---
 
 #### Screenshot 17 — Second `/linux-triage` output showing successful recovery with no FAIL results
 
-Add your screenshot here.
+![alt text](screenshots/linux-triage-successful-recoveryass6.png)
 
 ---
 
 #### Screenshot 18 — Output of `ls -lah reports` showing both `incident-failure-report.txt` and `recovery-report.txt`
 
-Add your screenshot here.
+![alt text](screenshots/ls-la-report-ass6.png)
 
 ---
 
 #### Screenshot 19 — `incident-summary.md` showing all required sections and your Full Name
 
-Add your screenshot here.
+![alt text](screenshots/incident-summary.md-ass6.png)
 
 ---
 
@@ -449,31 +451,31 @@ Answer the following in your own words:
 
 **1. What action did you execute manually?**
 
-Add your answer here.
+I ran sudo systemctl start nginx to restart the Nginx service after reviewing Claude's recommendation.
 
 ---
 
 **2. What evidence proves that the service recovered?**
 
-Add your answer here.
+systemctl is-active nginx returned active, curl -I http://localhost returned HTTP/1.1 200 OK, and the second /linux-triage run showed an overall HEALTHY status with zero FAIL results.
 
 ---
 
 **3. Why is the second triage run necessary?**
 
-Add your answer here.
+It provides independent, evidence-based confirmation that the recovery action actually worked, rather than just assuming it worked because the command ran without error. This closes the loop by verifying the actual system state, not just the action taken.
 
 ---
 
 **4. What could go wrong if an AI agent automatically restarted every failed service?**
 
-Add your answer here.
+It could mask or worsen the real problem — for example, restarting a service repeatedly without understanding a root cause like a full disk or bad config could hide the underlying issue, cause data loss mid-operation, or create a restart loop. It also removes human oversight from decisions that could affect a live production system, and could take an incorrect action based on an incomplete or wrong diagnosis.
 
 ---
 
 **5. In one sentence, explain the difference between using AI as a chatbot and using AI in this agentic workflow.**
 
-Add your answer here.
+A chatbot only answers questions from what it already knows or is told, while this agentic workflow lets AI actively gather real, current evidence from a live system and reason over it before recommending action, though still stopping short of taking that action itself.
 
 ---
 
@@ -481,51 +483,55 @@ Add your answer here.
 
 Fill in all seven sections below in your own words.
 
-**Full Name:** Add your full name here
+**Full Name:** Ifeoma Akabueze
 
-**Date:** DD/MM/YYYY
+**Date:** 19/07/2026
 
 ---
 
 **1. Reported Symptom**
 
-Add your answer here.
+The Nginx web server appeared to be down. Attempting to reach the application via http://localhost failed to connect, indicating the web service was unavailable.
 
 ---
 
 **2. Evidence Collected**
 
-Add your answer here.
+The Bash health-chec script reported three failed checks:
+[FAIL] Nginx service is not active.
+[FAIL] Port 80 is not listening.
+[FAIL] Local HTTP check returned status 000
 
+Disk usage (70%) and available memory (376 MB) both passed and were not implicated. The recent Nginx journal logs showed the service being started at 22:45:22 and then stopped cleanly ("Deactivated successfully") at 22:46:34.
 ---
 
 **3. Most Likely Cause**
 
-Add your answer here.
+The evidence shows Nginx was deliberately and cleanly stopped, not crashed. The "Deactivated successfully" log entry rules out a crash or error exit. Since disk and memory both passed, resource exhaustion was also ruled out. This points directly to the service simply being stopped, which explains why port 80 had no listener and HTTP check returned no response
 
 ---
 
 **4. Human-Approved Recovery Action**
 
-Add your answer here.
+sudo sysmtemctl start nginx
 
 ---
 
 **5. Verification**
 
-Add your answer here.
-
+After manually running the recovery command, "systemctl is-active nginx" returned "active", and "curl -l http://localhost" returned "HTTP/1.1 200 OK". A second "/linux-traige" run confirmed an overall "HEALTHY"
+status with zero FAIL results, matching the original healthy baseline.
 ---
 
 **6. Safety Decision**
 
-Add your answer here.
+The AI skill was restricted to gathering evidence (via the read-only Bash script) and analyzing that evidence to identify a likely cause and recommend a recovery command. It was not permitted to restart the service itself, because an automated action on a live system carries real risk — a misdiagnosis or unexpected side effect could cause further disruption. Requiring a human to review and manually execute the recovery command keeps a person accountable for any real change and provides a chance to catch mistakes before they affect the system.
 
 ---
 
 **7. Agentic Loop Mapping**
 
-Add your answer here.
+This incident followed Gather → Analyze → Human Act → Verify. The Bash script performed the Gather phase, collecting raw evidence about the service, port, HTTP response, disk, and memory. Claude performed the Analyze phase, interpreting that evidence to identify the likely cause and recommend a specific recovery command without executing it. I then performed the Human Act phase by manually running sudo systemctl start nginx. Finally, the Verify phase was completed by re-running /linux-triage, which confirmed the system had returned to a healthy state.
 
 ---
 
@@ -535,7 +541,7 @@ Add your answer here.
 
 #### LinkedIn Post URL
 
-Paste your LinkedIn post URL here:
+https://www.linkedin.com/posts/ifeoma-akabueze_dmibypravinmishra-agenticai-claudecode-ugcPost-7484718759702790144-rHd-/?
 
 `Add your URL here`
 
@@ -543,7 +549,7 @@ Paste your LinkedIn post URL here:
 
 #### Screenshot — Published LinkedIn post
 
-Add your screenshot here.
+![alt text](screenshots/LinkedIn-post-ass6.png)
 
 ---
 
@@ -551,7 +557,7 @@ Add your screenshot here.
 
 Paste the URL of your GitHub folder or repository containing the assignment files here:
 
-`Add your URL here`
+https://github.com/Ifeoma-Obinna23/devops-micro-internship-pravinmishra.git
 
 ---
 
