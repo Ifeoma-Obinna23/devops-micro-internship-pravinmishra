@@ -29,8 +29,6 @@ Save your screenshot in the `screenshots` folder and update the file name below.
 ![alt text](CGPT-Prompt-ass1.png)
 
 
-Replace `task-1-chatgpt.png` with your actual screenshot file name.
-
 ---
 
 ## What I Learned (2–3 lines)
@@ -183,8 +181,6 @@ Save your screenshot in the `screenshots` folder and update the file name below.
 ![alt text](screenshots/VSCode-Task-ass1.png)
 
 
-Replace `task-5-vscode.png` with your actual screenshot file name.
-
 ---
 
 # 🔗 Task 6: Publish Your Assignment as a LinkedIn Post
@@ -219,7 +215,7 @@ Add the following credit note at the end of your post:
 
 Paste your LinkedIn post URL here:
 
-https://www.linkedin.com/posts/ifeoma-akabueze_flowchart-maker-and-online-diagram-software-activity-7457765358230364160-RFIu?utm_source=share&utm_medium=member_desktop&rcm=ACoAACrL1kMBDufqWGsFnOaK7ikfsLJv6wdD64c
+https://www.linkedin.com/posts/ifeoma-akabueze_flowchart-maker-and-online-diagram-software-activity-7457765358230364160-RFIu?
 ```
 
 ---
