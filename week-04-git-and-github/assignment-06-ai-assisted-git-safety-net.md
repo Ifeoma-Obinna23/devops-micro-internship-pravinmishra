@@ -27,7 +27,7 @@ Confirm you are working in your own fork, then create a dedicated branch for thi
 
 #### Screenshot 1 — Output of git remote -v and git branch showing the new branch
 
-Add your screenshot here.
+![alt text](screenshots/Output-git-branch-remote-ass6.png)
 
 ---
 
@@ -35,7 +35,7 @@ Add your screenshot here.
 
 **1. Why create a dedicated branch instead of doing this work on main?**
 
-Add your answer here.
+Working directly on main risks introducing incomplete or risky code into the branch everyone else builds from. A dedicated feature branch isolates this work so it can be reviewed and merged deliberately, and if something goes wrong, main is never at risk. It also lets you have multiple pieces of work in progress without them interfering with each other.
 
 ---
 
@@ -49,7 +49,7 @@ On your own fork of this repository (the one you've been submitting your DMI wor
 
 #### Screenshot 1 — Output of  `git status` showing the staged file on feature/ai-pr-ready
 
-Add your screenshot here.
+![alt text](screenshots/git-status-showing-stagedfile-ass6.png)
 
 ---
 
@@ -57,7 +57,7 @@ Add your screenshot here.
 
 **1. Why does this assignment use an obviously fake key instead of a real one?**
 
-Add your answer here.
+This assignment uses a clearly fake AWS key (AKI-AABCDEFGHIJKLMNOP) instead of a real one because the goal is to test whether the safety checks correctly detect and block secret-like patterns — not to actually handle sensitive credentials. Using a real key, even briefly, would create genuine risk: it could be accidentally pushed to a remote fork, exposed in a screenshot, cached in shell history, or picked up by GitHub's own secret-scanning bots before the local hook ever runs. A fake key that looks like a real credential (matching AWS's key-ID pattern) is enough to validate that the pre-commit hook's detection logic works, while keeping the entire exercise completely safe
 
 ---
 
@@ -71,13 +71,12 @@ Create a tracked, shareable pre-commit hook that blocks a commit containing secr
 
 #### Screenshot 2 — `hooks/pre-commit` open in VS Code showing the full script
 
-Add your screenshot here.
-
+![alt text](screenshots/hooks-pre-commit-ass6.png)
 ---
 
 #### Screenshot 3 — Output of `git config core.hooksPath` confirming it points to `hooks`
 
-Add your screenshot here.
+![alt text](screenshots/Output-git-config.core-ass6.png)
 
 ---
 
@@ -85,13 +84,20 @@ Add your screenshot here.
 
 **1. Why is `hooks/pre-commit` tracked in the repo instead of living only in `.git/hooks/`?**
 
-Add your answer here.
+.git/hooks/ is local to each person's machine. It's never committed, never pushed, and doesn't exist in the repository's history at all. If the hook only lived there, every teammate would have to know it exists, manually recreate it, and remember to keep it updated. Nothing would enforce that anyone actually has it enabled, a new clone starts with zero hooks.
+By tracking the script in hooks/ and pointing core.hooksPath at it, the hook travels with the repository itself. Anyone who clones the repo and runs one git config core.hooksPath hooks command gets the exact same protection the rest of the team has — same rules, same detection patterns, same behavior. It turns a personal habit into a shared, version-controlled safety net that's visible, auditable, and consistent across the whole team.
 
 ---
 
 **2. Compare this to `PreToolUse` from Week 2 Assignment 6. What does each one intercept, and what do they have in common?**
 
-Add your answer here.
+PreToolUse intercepts an AI agent's tool call. It steps in right before the agent executes an action (like running a shell command or editing a file) and can block it based on fixed rules. hooks/pre-commit intercepts a Git commit — it steps in right before the commit is finalized and can block it based on fixed rules (secret patterns, file size).
+What they have in common:
+
+Both run automatically, without needing a human to remember to trigger them
+Both sit at a "before it's permanent" checkpoint — after work has been done, but before it's committed to history or executed for real
+Both enforce fixed, deterministic rules — no judgment, no interpretation, just pattern matching against a known risk
+Both exist because relying on a human to catch every mistake manually doesn't scale — the check has to be baked into the workflow itself, not left as an optional step someone might skip
 
 ---
 
@@ -105,21 +111,22 @@ Attempt to commit the staged file from Task 1 and show the hook rejecting it.
 
 #### Screenshot 4 — Terminal showing `git commit` rejected with the hook's "BLOCKED" message naming the exact file
 
-Add your screenshot here.
-
+![alt text](screenshots/git-commit-attempt-blocked-ass6.png)
 ---
 
 ### Notes
 
 **1. Which line in `hooks/pre-commit` matched your fake key, and why did it match?**
 
-Add your answer here.
+if git diff --cached -- "$file" | grep -qE 'AKIA[0-9A-Z]{16}|-----BEGIN (RSA|OPENSSH|PRIVATE) KEY-----'; then
+
+Specifically, the AKIA[0-9A-Z]{16} portion of the regex matched the fake key AKI-AABCDEFGHIJKLMNOP. AWS access key IDs always start with the literal prefix AKIA followed by exactly 16 uppercase letters or digits. The fake key follows that exact shape — AKIA + ABCDEFGHIJKLMNOP (16 uppercase characters) — so even though the key isn't real, it matches the pattern a real AWS key would have. The hook isn't checking whether the key is valid or active; it's just checking whether the staged diff contains something that looks like a credential, which is exactly why a fake-but-realistically-shaped key is enough to trigger it.
 
 ---
 
 **2. Could this hook have caught a poorly-named variable that stores a secret without the `AKIA` prefix? What does that tell you about the limits of a fixed rule like this?**
 
-Add your answer here.
+No.  This hook would completely miss it. The regex only matches two very specific, recognizable patterns: the AWS access key prefix (AKIA...) and PEM-style private key headers (-----BEGIN ... KEY-----). If a secret were stored in a variable like token = "sk_live_9f8a7b...", db_password = "hunter2", or even secret_key = "AKIA..." written in lowercase or with extra characters breaking the exact pattern, the hook would find nothing wrong and let the commit through without a single warning.
 
 ---
 
