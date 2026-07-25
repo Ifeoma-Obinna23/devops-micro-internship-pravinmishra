@@ -88,7 +88,7 @@ Run three tests that prove Claude remembers what you told it — without you say
 
 ## Linkedin Post Link
 
-Paste your Linkedin post link here:
+https://www.linkedin.com/posts/ifeoma-akabueze_tested-persistent-memory-in-claude-code-in-ugcPost-7486661679666147329-LbYH/?
 
 
 ---

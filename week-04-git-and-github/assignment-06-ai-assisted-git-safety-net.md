@@ -140,13 +140,13 @@ Create a manually invoked Claude Code skill that reads your staged changes and p
 
 #### Screenshot 5 — `SKILL.md` frontmatter showing `allowed-tools: Bash, Read, Grep` (no `Write`) and `disable-model-invocation: true`
 
-Add your screenshot here.
+![alt text](screenshots/Skill.md-showingallowed-bash-read-grep-ass6.png)
 
 ---
 
 #### Screenshot 6 — `/pr-ready` output while the risky file is still staged, showing it flagged the secret and/or debug statement
 
-Add your screenshot here.
+![alt text](screenshots/pr-ready-output-ass6.png)
 
 ---
 
@@ -154,14 +154,17 @@ Add your screenshot here.
 
 **1. Why does `/pr-ready` have `Bash` and `Read` but not `Write`?**
 
-Add your answer here.
+Why does /pr-ready have Bash and Read but not Write?
+
+/pr-ready's entire job is to observe and report — it needs Bash to run commands like git diff --cached and git status, and Read/Grep to inspect file contents and search for risky patterns. None of that requires changing anything on disk. Leaving Write out of allowed-tools isn't an accident — it's a deliberate, structural boundary that makes it impossible for the skill to edit files, even if it wanted to, even if a prompt injection or a misinterpreted instruction tried to push it that way. The permission model enforces the design intent at the tool level, not just as a written instruction the AI is trusted to follow. This keeps the human as the only one who can actually act — commit, push, or open the PR — while the AI's role stays limited to advising. It's the same principle behind giving someone "read-only" access to a system: the restriction isn't about trust in behavior, it's about removing the capability to do harm in the first place.
 
 ---
 
 **2. The pre-commit hook and `/pr-ready` both looked at the same staged diff. Did they flag the same things? What did one catch that the other didn't?**
 
-Add your answer here.
+No. They didn't flag the same things. The pre-commit hook only caught the hardcoded-looking AWS key (AKIA...), because that's the one pattern its regex was explicitly written to match. It said nothing about the debug statement, since echo "DEBUG: token is $AWS_ACCESS_KEY_ID" doesn't match any secret-shaped pattern. The hook has no concept of "this line prints something sensitive," only "does this string match a known key format."
 
+/pr-ready, on the other hand, caught both issues — the credential-shaped string and the leftover debug echo — and went a step further, noting that the change had no accompanying explanation of what notify.sh was for. That third observation is something a fixed-rule hook could never make, since it requires understanding the purpose and context of the change, not just scanning its content for a pattern
 ---
 
 # Task 5 — Fix the Issues and Re-Verify
@@ -174,13 +177,13 @@ Remove the secret and debug statement, then prove both gates now pass clean.
 
 #### Screenshot 7 — `git commit` succeeding after the fix (no BLOCKED message)
 
-Add your screenshot here.
+![alt text](screenshots/git-commit-after-fix-ass6.png)
 
 ---
 
 #### Screenshot 8 — Second `/pr-ready` run showing a clean risk report and a drafted PR title + description
 
-Add your screenshot here.
+![alt text](screenshots/pr-ready-output-after-fix-ass6.png)
 
 ---
 
@@ -188,7 +191,16 @@ Add your screenshot here.
 
 **1. What exactly did you change to satisfy the pre-commit hook?**
 
-Add your answer here.
+I removed the two lines in scripts/notify.sh that were triggering the hook's checks:
+
+AWS_ACCESS_KEY_ID=AKIAABCDEFGHIJKLMNOP — this matched the hook's regex (AKIA[0-9A-Z]{16}), which is what caused the BLOCKED: possible secret message on the first attempt.
+echo "DEBUG: token is $AWS_ACCESS_KEY_ID" — this printed the fake credential to stdout. While the pre-commit hook doesn't actually check for debug statements (only secret patterns and file size), removing it was still the right call since /pr-ready had flagged it as something that shouldn't ship.
+
+The final file was reduced to:
+
+bash
+#!/bin/bash
+echo "Notification sent"
 
 ---
 
@@ -204,13 +216,13 @@ Push your branch and open a real Pull Request, using `/pr-ready`'s drafted title
 
 #### Screenshot 9 — Your Pull Request showing the base repository is your own fork, plus the title and description, with the `/pr-ready` draft visible for comparison (paste it in the PR conversation or your notes below)
 
-Add your screenshot here.
+![alt text](<screenshots/Pull-Request -showing-the-base-repo-ass6.png>)
 
 ---
 
 #### PR Link
 
-Add your PR URL here...
+https://github.com/Ifeoma-Obinna23/devops-micro-internship-pravinmishra/pull/1
 
 ---
 
@@ -218,20 +230,21 @@ Add your PR URL here...
 
 **1. What, if anything, did you edit in the AI's drafted PR description before using it? Why?**
 
-Add your answer here.
+I edited both the title and the description. The AI's original draft was written while the risky version of scripts/notify.sh was still staged, so it described the script as "intentionally contains a credential-shaped string and a debug echo" and used the title demo: add sample script with fake AWS key for git safety-net testing. By the time I opened the PR, I had already removed the fake key and the debug statement after confirming the pre-commit hook worked correctly.
 
 ---
 
 **2. If you had blindly copy-pasted the AI's draft without reading it, what could go wrong?**
 
-Add your answer here.
+The PR description would have claimed the script "intentionally contains a credential-shaped string and a debug echo statement" — but by the time I opened the PR, I'd already removed both. A reviewer reading that description would believe the diff still contained a fake credential and debug output, when it actually didn't. That mismatch could cause real problems: a reviewer might waste time flagging an issue that was already fixed, or worse, might assume the description is accurate and skip actually reading the diff closely — meaning if something had still been wrong, it could slip through because the description gave false reassurance either way
 
 ---
 
 **3. Why does this PR need to target your own fork instead of the shared upstream repository?**
 
-Add your answer here.
+This assignment's files — the pre-commit hook, the /pr-ready skill definition, and the demo script used to test them — are personal coursework artifacts, not a contribution meant to be merged into the shared class repository. Opening the PR against pravinmishraaws/devops-micro-internship-pravinmishra would incorrectly propose adding this practice content to the original upstream project, which isn't the intent.
 
+The PR exists so my own review process — fork, branch, commit, push, and open a PR — can be demonstrated and evaluated as part of the assignment. Targeting my own fork (Ifeoma-Obinna23/devops-micro-internship-pravinmishra) keeps the workflow self-contained: it proves I can execute the full collaboration loop correctly, without actually merging assignment-specific files into the shared repository everyone else builds from
 ---
 
 # Task 7 — Map the Workflow to the Agentic Loop
@@ -244,31 +257,53 @@ Explain this assignment's workflow using the same Gather → Analyze → Human A
 
 **1. Which step(s) represent Gather?**
 
-Add your answer here.
+Two moments in this assignment represent Gather:
+
+The pre-commit hook running staged=$(git diff --cached --name-only --diff-filter=ACM) and looping through each file with git diff --cached -- "$file" — this collects exactly what's staged before any judgment is applied.
+/pr-ready running git diff --cached and git status at the start of its review — this reads the same staged changes so it has the actual facts to reason about.
 
 ---
 
 **2. Which step(s) represent Analyze?**
 
-Add your answer here.
+Two moments represent Analyze — one fixed-rule, one AI-assisted:
+
+The pre-commit hook's pattern matching — running the gathered diff through grep -qE 'AKIA[0-9A-Z]{16}|-----BEGIN (RSA|OPENSSH|PRIVATE) KEY-----' and checking file size against the 1MB limit. This is deterministic, rule-based analysis: the same input always produces the same output, with no interpretation involved.
+/pr-ready's reasoning over the same diff — identifying the credential-shaped string, the leftover debug echo, and the fact that the change had no accompanying context, then drafting a PR title and description. This is judgment-based analysis: it requires understanding intent and meaning, not just matching a string pattern.
 
 ---
 
 **3. Which step is Human Act, and why must a human — not Claude — run `git commit`, `git push`, and open the PR?**
 
-Add your answer here.
+Human Act is the moment I personally took the irreversible, consequential actions in this workflow:
+
+Manually edited scripts/notify.sh to remove the fake key and debug line
+Ran git commit -m "add notification script" myself
+Ran git push origin feature/ai-pr-ready myself
+Opened the Pull Request myself, reading and editing the AI's draft before submitting it
+
+A human — not Claude — must run these steps because committing, pushing, and opening a PR change shared history and notify other people. Once pushed, a commit exists on a remote server; once a PR is open, a reviewer may start acting on it. These aren't easily undone the way ignoring a suggestion is. If the AI could take these actions on its own, the last checkpoint where a person confirms the change is correct, intentional, and safe would disappear entirely.
+
+This is also why /pr-ready's allowed-tools deliberately excludes Write, and its instructions explicitly forbid git commit, git push, and gh pr create — the boundary isn't just a polite request the AI is trusted to follow, it's structurally enforced by what tools it's even allowed to use. The AI's role stays strictly advisory; the accountability for what actually ships stays with the engineer.
 
 ---
 
 **4. Which step is Verify?**
 
-Add your answer here.
+Verify is the moment I confirmed the fix actually worked, rather than assuming it did:
+
+Re-running git commit after removing the fake key and debug line, and confirming it succeeded with no BLOCKED message — proof the pre-commit hook now passes on the cleaned-up file
+Re-running /pr-ready after the fix, checking that it reported a clean risk report instead of flagging the credential and debug statement — proof the AI-assisted check also finds nothing wrong now
+Reviewing the final PR page before considering the work done — confirming the base repository was actually my fork (not upstream), the branches were correct, and the title/description matched the real, current state of the code
+
+This step closes the loop: Gather and Analyze produced findings, Human Act responded to them, and Verify is what confirms the response actually resolved the problem instead of just assuming the fix worked.
 
 ---
 
+
 **5. In one or two sentences: why do you need *both* the fixed-rule pre-commit hook and the AI skill? Isn't one enough?**
 
-Add your answer here.
+The fixed-rule hook catches known, mechanical patterns instantly and with zero ambiguity, but it's blind to anything outside its exact regex — like a leftover debug statement or a change with no explanation. The AI skill reasons about context and can catch those subtler issues, but its judgment isn't guaranteed the way a deterministic pattern match is, so relying on it alone would leave you exposed on the one thing the hook is 100% reliable at — together, they cover each other's blind spots.
 
 ---
 
@@ -282,13 +317,19 @@ Publish a LinkedIn post summarizing what you built and what you learned about co
 
 #### LinkedIn Post URL
 
-Add your LinkedIn post URL here...
+https://www.linkedin.com/posts/ifeoma-akabueze_dmibypravinmishra-agenticai-claudecode-ugcPost-7486547167722115073-U0_Q/?
 
 ---
 
 ## Key Learnings
 
 Add 3-5 bullet points on what you learned this week.
+
+The fork → branch → commit → PR workflow isn't just ceremony — every step (separate remotes, feature branches, single-purpose commits) exists to protect a shared codebase from accidental damage, not to add friction.
+A fixed rule and an AI-assisted check solve different problems — one is fast and 100% reliable for exactly what it's coded to catch; the other reasons about context but isn't guaranteed. You need both.
+AI can advise, but shouldn't be trusted to act — building the /pr-ready skill with Bash/Read but no Write access taught me that the safest AI boundaries are structural, not just instructional.
+A PR description is a claim, not just a formality — an AI-drafted description reflects the code at the moment it's written, not necessarily the code you actually ship. Reading and editing it before submitting matters.
+Verification isn't optional — re-running the same checks after a fix (not just assuming the fix worked) is what actually closes the loop between "I think this is right" and "I confirmed this is right.
 
 -
 -
@@ -312,7 +353,7 @@ Add 3-5 bullet points on what you learned this week.
 
 Paste your forked repository URL here:
 
-`Add your URL here`
+https://github.com/Ifeoma-Obinna23/devops-micro-internship-pravinmishra
 
 ---
 

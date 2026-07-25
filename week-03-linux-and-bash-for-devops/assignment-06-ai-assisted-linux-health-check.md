@@ -543,7 +543,6 @@ This incident followed Gather → Analyze → Human Act → Verify. The Bash scr
 
 https://www.linkedin.com/posts/ifeoma-akabueze_dmibypravinmishra-agenticai-claudecode-ugcPost-7484718759702790144-rHd-/?
 
-`Add your URL here`
 
 ---
 

@@ -147,8 +147,6 @@ https://www.linkedin.com/posts/ifeoma-akabueze_dmibypravinmishra-agenticai-claud
 
 ## Fork URL
 
-Paste your fork URL here:
-
 https://github.com/Ifeoma-Obinna23/devops-micro-internship-interviews
 
 ---
