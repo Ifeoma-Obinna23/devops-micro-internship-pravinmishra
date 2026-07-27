@@ -525,8 +525,6 @@ This is the "control flow" of the script — each function (built from variables
 
 #### LinkedIn Post URL
 
-Paste your LinkedIn post URL here:
-
 https://www.linkedin.com/posts/ifeoma-akabueze_dmibypravinmishra-agenticai-claudecode-ugcPost-7483961301371801600-yDW7/?
 
 ---
