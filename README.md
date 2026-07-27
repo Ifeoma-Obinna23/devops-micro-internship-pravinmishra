@@ -130,11 +130,11 @@ Week 04 → Git & GitHub
 
 | Week | Topic | Status | Assignment | LinkedIn Post | Blog Post |
 |------|-------|--------|------------|---------------|-----------|
-| 00 | Internet & Networking Basics | ✅ Completed | ✅ Completed | https://www.linkedin.com/posts/ifeoma-akabueze_flowchart-maker-and-online-diagram-software-activity-7457765358230364160-RFIu? | https://medium.com/@ifeomaohachosim/devops-micro-internship-with-agentic-ai-cd9da6767f39 |
-| 01 | Success Mindset | ✅ Completed | ✅ Completed | —https://www.linkedin.com/posts/ifeoma-akabueze_i-was-asked-to-write-about-my-life-in-3-7-share-7478849190475829250-Frx6/? | https://medium.com/@ifeomaohachosim/the-woman-who-prepared-before-the-opportunity-arrived-0382de924903?postPublishedType=initial— |
+| 00 | Internet & Networking Basics | ✅ Completed | ✅ Completed | https://www.linkedin.com/posts/ifeoma-akabueze_flowchart-maker-and-online-diagram-software-activity-7457765358230364160-RFIu? | https://medium.com/@ifeomaohachosim/devops-micro-internship-with-agentic-ai-cd9da6767f39? |
+| 01 | Success Mindset | ✅ Completed | ✅ Completed | —https://www.linkedin.com/posts/ifeoma-akabueze_i-was-asked-to-write-about-my-life-in-3-7-share-7478849190475829250-Frx6/? |https://medium.com/@ifeomaohachosim/the-woman-who-prepared-before-the-opportunity-arrived-0382de924903? |
 | 02 | Agentic AI with Claude Code | ✅ Completed | ✅ Completed | https://www.linkedin.com/posts/ifeoma-akabueze_dmibypravinmishra-agenticai-claudecode-activity-7481470279379087360-iKtT? | https://medium.com/@ifeomaohachosim/my-first-light-bulb-moment-with-agentic-ai-5e98bff4c0d0 |
-| 03 | Linux & Bash for DevOps |✅ Completed |✅ Completed| https://www.linkedin.com/posts/ifeoma-akabueze_dmibypravinmishra-agenticai-claudecode-activity-7484718761107861507-g38d? | https://medium.com/p/1d7512d013c5|
-| 04 | Git & GitHub | ✅ Completed | ✅ Completed |https://www.linkedin.com/posts/ifeoma-akabueze_dmibypravinmishra-agenticai-claudecode-ugcPost-7486547167722115073-U0_Q/?|https://medium.com/@ifeomaohachosim/from-command-line-to-pull-request-my-first-full-git-github-collaboration-workflow-1936893c9b7e?|
+| 03 | Linux & Bash for DevOps |✅ Completed |✅ Completed| https://www.linkedin.com/posts/ifeoma-akabueze_dmibypravinmishra-agenticai-claudecode-activity-7484718761107861507-g38d? | https://medium.com/@ifeomaohachosim/what-building-an-ai-assisted-linux-health-check-taught-me-about-devops-1d7512d013c5?|
+| 04 | Git & GitHub | ✅ Completed | ✅ Completed |https://www.linkedin.com/posts/ifeoma-akabueze_dmibypravinmishra-agenticai-claudecode-ugcPost-7486547167722115073-U0_Q/?|https://medium.com/@ifeomaohachosim/from-command-line-to-pull-request-my-first-full-git-github-collaboration-workflow-1936893c9b7e?
 | 05 | DevOps Lifecycle & Agile | ⬜ Not Started | ⏳ Pending | — | — |
 | 06 | AWS Cloud | ⬜ Not Started | ⏳ Pending | — | — |
 | 07 | Azure Cloud | ⬜ Not Started | ⏳ Pending | — | — |
