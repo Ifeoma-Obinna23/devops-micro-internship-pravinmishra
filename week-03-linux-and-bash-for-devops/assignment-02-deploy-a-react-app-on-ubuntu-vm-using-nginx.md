@@ -138,7 +138,6 @@ Verify the React application is publicly accessible via the server's public IP.
 
 https://www.linkedin.com/posts/ifeoma-akabueze_dmibypravinmishra-agenticai-claudecode-share-7483569003345596416--dng/?
 
-
 ---
 
 #### Screenshot — LinkedIn post showing the deployed application

@@ -291,7 +291,7 @@ The exact line is:
 
 **3. Did your script return exit code 0 or 1? Explain why.**
 
-My script returned exit code 0, confirmed directly in your terminal output:
+My script returned exit code 0, confirmed directly in my terminal output:
 Captured Exit Code: 0
 and echoed again inside the report itself:
 Script Exit Code: 0
@@ -320,7 +320,6 @@ Turn the Bash script into a reusable, manually invoked Agentic AI workflow.
 
 #### Screenshot 12 — `/linux-triage` output for the healthy server
 
-Add your screenshot here.
 
 ---
 

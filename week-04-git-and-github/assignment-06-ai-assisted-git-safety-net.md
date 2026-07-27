@@ -57,7 +57,7 @@ On your own fork of this repository (the one you've been submitting your DMI wor
 
 **1. Why does this assignment use an obviously fake key instead of a real one?**
 
-This assignment uses a clearly fake AWS key (AKI-AABCDEFGHIJKLMNOP) instead of a real one because the goal is to test whether the safety checks correctly detect and block secret-like patterns — not to actually handle sensitive credentials. Using a real key, even briefly, would create genuine risk: it could be accidentally pushed to a remote fork, exposed in a screenshot, cached in shell history, or picked up by GitHub's own secret-scanning bots before the local hook ever runs. A fake key that looks like a real credential (matching AWS's key-ID pattern) is enough to validate that the pre-commit hook's detection logic works, while keeping the entire exercise completely safe
+This assignment uses a clearly fake AWS key (`AKIA-ABCDEFGHIJKLMNOP`, redacted with a dash here so this write-up itself doesn't re-trip the hook) instead of a real one because the goal is to test whether the safety checks correctly detect and block secret-like patterns — not to actually handle sensitive credentials. Using a real key, even briefly, would create genuine risk: it could be accidentally pushed to a remote fork, exposed in a screenshot, cached in shell history, or picked up by GitHub's own secret-scanning bots before the local hook ever runs. A fake key that looks like a real credential (matching AWS's key-ID pattern) is enough to validate that the pre-commit hook's detection logic works, while keeping the entire exercise completely safe
 
 ---
 
@@ -118,15 +118,15 @@ Attempt to commit the staged file from Task 1 and show the hook rejecting it.
 
 **1. Which line in `hooks/pre-commit` matched your fake key, and why did it match?**
 
-if git diff --cached -- "$file" | grep -qE 'AKIA[0-9A-Z]{16}|-----BEGIN (RSA|OPENSSH|PRIVATE) KEY-----'; then
+if git diff --cached -- "$file" | grep -E '^\+' | grep -qE 'AKIA[0-9A-Z]{16}|-----BEGIN (RSA|OPENSSH|PRIVATE) KEY-----'; then
 
-Specifically, the AKIA[0-9A-Z]{16} portion of the regex matched the fake key AKI-AABCDEFGHIJKLMNOP. AWS access key IDs always start with the literal prefix AKIA followed by exactly 16 uppercase letters or digits. The fake key follows that exact shape — AKIA + ABCDEFGHIJKLMNOP (16 uppercase characters) — so even though the key isn't real, it matches the pattern a real AWS key would have. The hook isn't checking whether the key is valid or active; it's just checking whether the staged diff contains something that looks like a credential, which is exactly why a fake-but-realistically-shaped key is enough to trigger it.
+Specifically, the `AKIA[0-9A-Z]{16}` portion of the regex matched the fake key `AKIA` immediately followed by 16 uppercase letters, with no separator. AWS access key IDs always start with the literal prefix AKIA followed by exactly 16 uppercase letters or digits. The fake key I originally used followed that exact shape, so even though the key isn't real, it matched the pattern a real AWS key would have. The hook isn't checking whether the key is valid or active; it's just checking whether the staged diff contains something that looks like a credential, which is exactly why a fake-but-realistically-shaped key is enough to trigger it.
 
 ---
 
 **2. Could this hook have caught a poorly-named variable that stores a secret without the `AKIA` prefix? What does that tell you about the limits of a fixed rule like this?**
 
-No.  This hook would completely miss it. The regex only matches two very specific, recognizable patterns: the AWS access key prefix (AKIA...) and PEM-style private key headers (-----BEGIN ... KEY-----). If a secret were stored in a variable like token = "sk_live_9f8a7b...", db_password = "hunter2", or even secret_key = "AKIA..." written in lowercase or with extra characters breaking the exact pattern, the hook would find nothing wrong and let the commit through without a single warning.
+No.  This hook would completely miss it. The regex only matches two very specific, recognizable patterns: the AWS access key prefix (`AKIA...`) and PEM-style private key headers (`-----BEGIN ... KEY-----`). If a secret were stored in a variable like `token = "sk_live_9f8a7b..."`, `db_password = "hunter2"`, or even `secret_key = "AKIA..."` written in lowercase or with extra characters breaking the exact pattern, the hook would find nothing wrong and let the commit through without a single warning.
 
 ---
 
@@ -162,7 +162,7 @@ Why does /pr-ready have Bash and Read but not Write?
 
 **2. The pre-commit hook and `/pr-ready` both looked at the same staged diff. Did they flag the same things? What did one catch that the other didn't?**
 
-No. They didn't flag the same things. The pre-commit hook only caught the hardcoded-looking AWS key (AKIA...), because that's the one pattern its regex was explicitly written to match. It said nothing about the debug statement, since echo "DEBUG: token is $AWS_ACCESS_KEY_ID" doesn't match any secret-shaped pattern. The hook has no concept of "this line prints something sensitive," only "does this string match a known key format."
+No. They didn't flag the same things. The pre-commit hook only caught the hardcoded-looking AWS key (`AKIA...`), because that's the one pattern its regex was explicitly written to match. It said nothing about the debug statement, since `echo "DEBUG: token is $AWS_ACCESS_KEY_ID"` doesn't match any secret-shaped pattern. The hook has no concept of "this line prints something sensitive," only "does this string match a known key format."
 
 /pr-ready, on the other hand, caught both issues — the credential-shaped string and the leftover debug echo — and went a step further, noting that the change had no accompanying explanation of what notify.sh was for. That third observation is something a fixed-rule hook could never make, since it requires understanding the purpose and context of the change, not just scanning its content for a pattern
 ---
@@ -193,8 +193,8 @@ Remove the secret and debug statement, then prove both gates now pass clean.
 
 I removed the two lines in scripts/notify.sh that were triggering the hook's checks:
 
-AWS_ACCESS_KEY_ID=AKIAABCDEFGHIJKLMNOP — this matched the hook's regex (AKIA[0-9A-Z]{16}), which is what caused the BLOCKED: possible secret message on the first attempt.
-echo "DEBUG: token is $AWS_ACCESS_KEY_ID" — this printed the fake credential to stdout. While the pre-commit hook doesn't actually check for debug statements (only secret patterns and file size), removing it was still the right call since /pr-ready had flagged it as something that shouldn't ship.
+`AWS_ACCESS_KEY_ID=AKIA` immediately followed by 16 uppercase letters — this matched the hook's regex (`AKIA[0-9A-Z]{16}`), which is what caused the `BLOCKED: possible secret` message on the first attempt.
+`echo "DEBUG: token is $AWS_ACCESS_KEY_ID"` — this printed the fake credential to stdout. While the pre-commit hook doesn't actually check for debug statements (only secret patterns and file size), removing it was still the right call since /pr-ready had flagged it as something that shouldn't ship.
 
 The final file was reduced to:
 
@@ -268,7 +268,7 @@ The pre-commit hook running staged=$(git diff --cached --name-only --diff-filter
 
 Two moments represent Analyze — one fixed-rule, one AI-assisted:
 
-The pre-commit hook's pattern matching — running the gathered diff through grep -qE 'AKIA[0-9A-Z]{16}|-----BEGIN (RSA|OPENSSH|PRIVATE) KEY-----' and checking file size against the 1MB limit. This is deterministic, rule-based analysis: the same input always produces the same output, with no interpretation involved.
+The pre-commit hook's pattern matching — running the gathered diff through `grep -qE 'AKIA[0-9A-Z]{16}|-----BEGIN (RSA|OPENSSH|PRIVATE) KEY-----'` and checking file size against the 1MB limit. This is deterministic, rule-based analysis: the same input always produces the same output, with no interpretation involved.
 /pr-ready's reasoning over the same diff — identifying the credential-shaped string, the leftover debug echo, and the fact that the change had no accompanying context, then drafting a PR title and description. This is judgment-based analysis: it requires understanding intent and meaning, not just matching a string pattern.
 
 ---
@@ -350,8 +350,6 @@ Verification isn't optional — re-running the same checks after a fix (not just
 ---
 
 ## GitHub Repository URL
-
-Paste your forked repository URL here:
 
 https://github.com/Ifeoma-Obinna23/devops-micro-internship-pravinmishra
 

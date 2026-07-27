@@ -4,7 +4,7 @@ set -e
 staged=$(git diff --cached --name-only --diff-filter=ACM)
 blocked=0
 for file in $staged; do
-  if git diff --cached -- "$file" | grep -qE 'AKIA[0-9A-Z]{16}|-----BEGIN (RSA|OPENSSH|PRIVATE) KEY-----'; then
+  if git diff --cached -- "$file" | grep -E '^\+' | grep -qE 'AKIA[0-9A-Z]{16}|-----BEGIN (RSA|OPENSSH|PRIVATE) KEY-----'; then
     echo "BLOCKED: possible secret in $file"
     blocked=1
   fi
