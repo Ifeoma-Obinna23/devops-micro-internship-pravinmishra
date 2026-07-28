@@ -2,13 +2,11 @@
 
 Part of the DevOps Micro Internship (DMI) Cohort 3 with Agentic AI
 
----
 
 ## Purpose
 
 In this assignment, you will set up your local development environment for Agentic AI using Claude Code. You will install and authenticate Claude Code CLI, fork and clone the starter repository, and observe how the Agentic Loop (Gather → Act → Verify) works in practice.
 
----
 
 # Task 1 — Install Claude Code
 
@@ -22,12 +20,11 @@ Install the Claude Code CLI globally and authenticate it using your Anthropic ac
 
 ![alt text](screenshots/Claude-version.png)
 
----
 
 #### Screenshot 2 — Claude Code authenticated and showing the terminal prompt (your name visible)
 
 ![alt text](screenshots/Claude-authenticated.png)
----
+
 
 # Task 2 — Fork and Clone the Starter Repository
 
@@ -41,7 +38,6 @@ Fork the provided GitHub repository, clone it to your local machine, and open it
 
 ![alt text](screenshots/File-tree.png)
 
----
 
 # Task 3 — Observe the Agentic Loop
 
@@ -54,13 +50,12 @@ Interact with Claude Code and observe how it performs the Agentic Loop (Gather �
 #### Screenshot 4 — Claude's response to the first question, showing it read the files (tool calls visible)
 
 ![alt text](screenshots/First-question.png)
----
+
 
 #### Screenshot 5 — Claude's response to the second question, showing it ran a command and reported the line count
 
 ![alt text](screenshots/Second-question.png)
 
----
 
 # Submission Instructions
 
@@ -69,13 +64,11 @@ Interact with Claude Code and observe how it performs the Agentic Loop (Gather �
 - Push your completed work to your forked repository
 - Submit your GitHub repository URL below
 
----
 
 ## GitHub Repository URL
 
 https://github.com/Ifeoma-Obinna23/devops-micro-internship-pravinmishra.git
 
----
 
 # Completion Checklist
 

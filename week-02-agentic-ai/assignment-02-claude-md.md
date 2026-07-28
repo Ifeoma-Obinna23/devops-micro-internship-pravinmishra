@@ -2,13 +2,11 @@
 
 Part of the DevOps Micro Internship (DMI) Cohort 3 with Agentic AI
 
----
 
 ## Purpose
 
 In this assignment, you will create and customize a `CLAUDE.md` file for your project using `/init`. You will then modify it with project-specific rules and verify how it changes Claude’s behavior through before-and-after testing.
 
----
 
 # Task 1 — Capture the Before State
 
@@ -36,7 +34,6 @@ Generate an initial `CLAUDE.md` file using the `/init` command and review the au
 
 ![alt text](screenshots/With-Claude.md.png)
 
----
 
 # Task 3 — Customize the CLAUDE.md
 
@@ -50,7 +47,6 @@ Update the generated `CLAUDE.md` file by adding project-specific instructions ac
 
 ![alt text](screenshots/Claude-files-details.png)
 
----
 
 # Task 4 — Test the After State
 
@@ -69,7 +65,7 @@ Verify that Claude’s behavior changes after adding `CLAUDE.md` by running a ne
 
 ![alt text](screenshots/Second-question-after-Claude.md.png)
 
----
+
 
 # Task 5 — Commit and push your changes to your fork in GitHub
 
@@ -83,7 +79,7 @@ Commit the `CLAUDE.md` file and push it to your GitHub fork so the project instr
 
 ![alt text](screenshots/Ultimate-repo-git-claude.md.png)
 
----
+
 
 # Submission Instructions
 
@@ -91,13 +87,12 @@ Commit the `CLAUDE.md` file and push it to your GitHub fork so the project instr
 - Add all required screenshots to your submission
 - Push your final changes to your forked repository
 
----
+
 
 ## GitHub Repository URL
 
 https://github.com/Ifeoma-Obinna23/Ultimate-Agentic-DevOps-with-Claude-Code.git
 
----
 
 # Completion Checklist
 

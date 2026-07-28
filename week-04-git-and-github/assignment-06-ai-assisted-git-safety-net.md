@@ -2,7 +2,7 @@
 
 Part of the DevOps Micro Internship (DMI) Cohort 3 with Agentic AI
 
----
+
 
 ## Purpose
 
@@ -15,7 +15,7 @@ You will build both halves of a real "PR Ready" workflow:
 
 This mirrors the Agentic Loop from Week 3's Linux triage assignment: **Gather → Analyze → Human Act → Verify**. The hook and the skill both gather and analyze; only you act.
 
----
+
 
 # Task 0 — Confirm Your Fork and Create a Feature Branch
 
@@ -29,7 +29,7 @@ Confirm you are working in your own fork, then create a dedicated branch for thi
 
 ![alt text](screenshots/Output-git-branch-remote-ass6.png)
 
----
+
 
 ### Notes
 
@@ -37,7 +37,7 @@ Confirm you are working in your own fork, then create a dedicated branch for thi
 
 Working directly on main risks introducing incomplete or risky code into the branch everyone else builds from. A dedicated feature branch isolates this work so it can be reviewed and merged deliberately, and if something goes wrong, main is never at risk. It also lets you have multiple pieces of work in progress without them interfering with each other.
 
----
+
 
 # Task 1 — Stage a Change With Realistic Risk
 
@@ -51,7 +51,7 @@ On your own fork of this repository (the one you've been submitting your DMI wor
 
 ![alt text](screenshots/git-status-showing-stagedfile-ass6.png)
 
----
+
 
 ### Notes
 
@@ -59,7 +59,7 @@ On your own fork of this repository (the one you've been submitting your DMI wor
 
 This assignment uses a clearly fake AWS key (`AKIA-ABCDEFGHIJKLMNOP`, redacted with a dash here so this write-up itself doesn't re-trip the hook) instead of a real one because the goal is to test whether the safety checks correctly detect and block secret-like patterns — not to actually handle sensitive credentials. Using a real key, even briefly, would create genuine risk: it could be accidentally pushed to a remote fork, exposed in a screenshot, cached in shell history, or picked up by GitHub's own secret-scanning bots before the local hook ever runs. A fake key that looks like a real credential (matching AWS's key-ID pattern) is enough to validate that the pre-commit hook's detection logic works, while keeping the entire exercise completely safe
 
----
+
 
 # Task 2 — Write a Real Git Pre-Commit Hook
 
@@ -78,7 +78,7 @@ Create a tracked, shareable pre-commit hook that blocks a commit containing secr
 
 ![alt text](screenshots/Output-git-config.core-ass6.png)
 
----
+
 
 ### Notes
 
@@ -87,7 +87,7 @@ Create a tracked, shareable pre-commit hook that blocks a commit containing secr
 .git/hooks/ is local to each person's machine. It's never committed, never pushed, and doesn't exist in the repository's history at all. If the hook only lived there, every teammate would have to know it exists, manually recreate it, and remember to keep it updated. Nothing would enforce that anyone actually has it enabled, a new clone starts with zero hooks.
 By tracking the script in hooks/ and pointing core.hooksPath at it, the hook travels with the repository itself. Anyone who clones the repo and runs one git config core.hooksPath hooks command gets the exact same protection the rest of the team has — same rules, same detection patterns, same behavior. It turns a personal habit into a shared, version-controlled safety net that's visible, auditable, and consistent across the whole team.
 
----
+
 
 **2. Compare this to `PreToolUse` from Week 2 Assignment 6. What does each one intercept, and what do they have in common?**
 
@@ -99,7 +99,7 @@ Both sit at a "before it's permanent" checkpoint — after work has been done, b
 Both enforce fixed, deterministic rules — no judgment, no interpretation, just pattern matching against a known risk
 Both exist because relying on a human to catch every mistake manually doesn't scale — the check has to be baked into the workflow itself, not left as an optional step someone might skip
 
----
+
 
 # Task 3 — Prove the Hook Blocks the Risky Commit
 
@@ -122,13 +122,12 @@ if git diff --cached -- "$file" | grep -E '^\+' | grep -qE 'AKIA[0-9A-Z]{16}|---
 
 Specifically, the `AKIA[0-9A-Z]{16}` portion of the regex matched the fake key `AKIA` immediately followed by 16 uppercase letters, with no separator. AWS access key IDs always start with the literal prefix AKIA followed by exactly 16 uppercase letters or digits. The fake key I originally used followed that exact shape, so even though the key isn't real, it matched the pattern a real AWS key would have. The hook isn't checking whether the key is valid or active; it's just checking whether the staged diff contains something that looks like a credential, which is exactly why a fake-but-realistically-shaped key is enough to trigger it.
 
----
+
 
 **2. Could this hook have caught a poorly-named variable that stores a secret without the `AKIA` prefix? What does that tell you about the limits of a fixed rule like this?**
 
 No.  This hook would completely miss it. The regex only matches two very specific, recognizable patterns: the AWS access key prefix (`AKIA...`) and PEM-style private key headers (`-----BEGIN ... KEY-----`). If a secret were stored in a variable like `token = "sk_live_9f8a7b..."`, `db_password = "hunter2"`, or even `secret_key = "AKIA..."` written in lowercase or with extra characters breaking the exact pattern, the hook would find nothing wrong and let the commit through without a single warning.
 
----
 
 # Task 4 — Build the `/pr-ready` Skill
 
@@ -142,23 +141,19 @@ Create a manually invoked Claude Code skill that reads your staged changes and p
 
 ![alt text](screenshots/Skill.md-showingallowed-bash-read-grep-ass6.png)
 
----
+
 
 #### Screenshot 6 — `/pr-ready` output while the risky file is still staged, showing it flagged the secret and/or debug statement
 
 ![alt text](screenshots/pr-ready-output-ass6.png)
 
----
 
 ### Notes
 
 **1. Why does `/pr-ready` have `Bash` and `Read` but not `Write`?**
 
-Why does /pr-ready have Bash and Read but not Write?
-
 /pr-ready's entire job is to observe and report — it needs Bash to run commands like git diff --cached and git status, and Read/Grep to inspect file contents and search for risky patterns. None of that requires changing anything on disk. Leaving Write out of allowed-tools isn't an accident — it's a deliberate, structural boundary that makes it impossible for the skill to edit files, even if it wanted to, even if a prompt injection or a misinterpreted instruction tried to push it that way. The permission model enforces the design intent at the tool level, not just as a written instruction the AI is trusted to follow. This keeps the human as the only one who can actually act — commit, push, or open the PR — while the AI's role stays limited to advising. It's the same principle behind giving someone "read-only" access to a system: the restriction isn't about trust in behavior, it's about removing the capability to do harm in the first place.
 
----
 
 **2. The pre-commit hook and `/pr-ready` both looked at the same staged diff. Did they flag the same things? What did one catch that the other didn't?**
 
@@ -179,13 +174,12 @@ Remove the secret and debug statement, then prove both gates now pass clean.
 
 ![alt text](screenshots/git-commit-after-fix-ass6.png)
 
----
 
 #### Screenshot 8 — Second `/pr-ready` run showing a clean risk report and a drafted PR title + description
 
 ![alt text](screenshots/pr-ready-output-after-fix-ass6.png)
 
----
+
 
 ### Notes
 
@@ -202,7 +196,7 @@ bash
 #!/bin/bash
 echo "Notification sent"
 
----
+
 
 # Task 6 — Push and Open a Pull Request Using the AI Draft
 
@@ -218,13 +212,12 @@ Push your branch and open a real Pull Request, using `/pr-ready`'s drafted title
 
 ![alt text](<screenshots/Pull-Request -showing-the-base-repo-ass6.png>)
 
----
+
 
 #### PR Link
 
 https://github.com/Ifeoma-Obinna23/devops-micro-internship-pravinmishra/pull/1
 
----
 
 ### Notes
 
@@ -232,13 +225,13 @@ https://github.com/Ifeoma-Obinna23/devops-micro-internship-pravinmishra/pull/1
 
 I edited both the title and the description. The AI's original draft was written while the risky version of scripts/notify.sh was still staged, so it described the script as "intentionally contains a credential-shaped string and a debug echo" and used the title demo: add sample script with fake AWS key for git safety-net testing. By the time I opened the PR, I had already removed the fake key and the debug statement after confirming the pre-commit hook worked correctly.
 
----
+
 
 **2. If you had blindly copy-pasted the AI's draft without reading it, what could go wrong?**
 
 The PR description would have claimed the script "intentionally contains a credential-shaped string and a debug echo statement" — but by the time I opened the PR, I'd already removed both. A reviewer reading that description would believe the diff still contained a fake credential and debug output, when it actually didn't. That mismatch could cause real problems: a reviewer might waste time flagging an issue that was already fixed, or worse, might assume the description is accurate and skip actually reading the diff closely — meaning if something had still been wrong, it could slip through because the description gave false reassurance either way
 
----
+
 
 **3. Why does this PR need to target your own fork instead of the shared upstream repository?**
 
@@ -262,7 +255,7 @@ Two moments in this assignment represent Gather:
 The pre-commit hook running staged=$(git diff --cached --name-only --diff-filter=ACM) and looping through each file with git diff --cached -- "$file" — this collects exactly what's staged before any judgment is applied.
 /pr-ready running git diff --cached and git status at the start of its review — this reads the same staged changes so it has the actual facts to reason about.
 
----
+
 
 **2. Which step(s) represent Analyze?**
 
@@ -271,7 +264,6 @@ Two moments represent Analyze — one fixed-rule, one AI-assisted:
 The pre-commit hook's pattern matching — running the gathered diff through `grep -qE 'AKIA[0-9A-Z]{16}|-----BEGIN (RSA|OPENSSH|PRIVATE) KEY-----'` and checking file size against the 1MB limit. This is deterministic, rule-based analysis: the same input always produces the same output, with no interpretation involved.
 /pr-ready's reasoning over the same diff — identifying the credential-shaped string, the leftover debug echo, and the fact that the change had no accompanying context, then drafting a PR title and description. This is judgment-based analysis: it requires understanding intent and meaning, not just matching a string pattern.
 
----
 
 **3. Which step is Human Act, and why must a human — not Claude — run `git commit`, `git push`, and open the PR?**
 
@@ -286,7 +278,7 @@ A human — not Claude — must run these steps because committing, pushing, and
 
 This is also why /pr-ready's allowed-tools deliberately excludes Write, and its instructions explicitly forbid git commit, git push, and gh pr create — the boundary isn't just a polite request the AI is trusted to follow, it's structurally enforced by what tools it's even allowed to use. The AI's role stays strictly advisory; the accountability for what actually ships stays with the engineer.
 
----
+
 
 **4. Which step is Verify?**
 
@@ -298,14 +290,14 @@ Reviewing the final PR page before considering the work done — confirming the 
 
 This step closes the loop: Gather and Analyze produced findings, Human Act responded to them, and Verify is what confirms the response actually resolved the problem instead of just assuming the fix worked.
 
----
+
 
 
 **5. In one or two sentences: why do you need *both* the fixed-rule pre-commit hook and the AI skill? Isn't one enough?**
 
 The fixed-rule hook catches known, mechanical patterns instantly and with zero ambiguity, but it's blind to anything outside its exact regex — like a leftover debug statement or a change with no explanation. The AI skill reasons about context and can catch those subtler issues, but its judgment isn't guaranteed the way a deterministic pattern match is, so relying on it alone would leave you exposed on the one thing the hook is 100% reliable at — together, they cover each other's blind spots.
 
----
+
 
 # Task 8 — LinkedIn Post
 
@@ -319,7 +311,6 @@ Publish a LinkedIn post summarizing what you built and what you learned about co
 
 https://www.linkedin.com/posts/ifeoma-akabueze_dmibypravinmishra-agenticai-claudecode-ugcPost-7486547167722115073-U0_Q/?
 
----
 
 ## Key Learnings
 
@@ -335,7 +326,7 @@ Verification isn't optional — re-running the same checks after a fix (not just
 -
 -
 
----
+
 
 # Submission Instructions
 
@@ -353,7 +344,6 @@ Verification isn't optional — re-running the same checks after a fix (not just
 
 https://github.com/Ifeoma-Obinna23/devops-micro-internship-pravinmishra
 
----
 
 # Completion Checklist
 
