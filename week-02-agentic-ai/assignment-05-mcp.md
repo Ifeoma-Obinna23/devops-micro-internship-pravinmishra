@@ -93,8 +93,6 @@ Verify MCP functionality by retrieving real-time data from your GitHub account u
 
 ## GitHub Repository URL
 
-Paste your forked repository URL here:
-
 https://github.com/Ifeoma-Obinna23/Ultimate-Agentic-DevOps-with-Claude-Code.git
 
 ---
