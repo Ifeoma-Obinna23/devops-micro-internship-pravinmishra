@@ -43,7 +43,6 @@ Fork the provided GitHub repository, clone it to your local machine, and open it
 Interact with Claude Code and observe how it performs the Agentic Loop (Gather → Act → Verify) while answering project-related questions.
 
 ### Evidence
-
 #### Screenshot 4 — Claude's response to the first question, showing it read the files (tool calls visible)
 ![alt text](screenshots/First-question.png)
 
@@ -58,9 +57,7 @@ Interact with Claude Code and observe how it performs the Agentic Loop (Gather �
 - Push your completed work to your forked repository
 - Submit your GitHub repository URL below
 
-
 ## GitHub Repository URL
-
 https://github.com/Ifeoma-Obinna23/devops-micro-internship-pravinmishra.git
 
 
