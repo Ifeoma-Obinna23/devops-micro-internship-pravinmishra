@@ -319,9 +319,7 @@ Turn the Bash script into a reusable, manually invoked Agentic AI workflow.
 ---
 
 #### Screenshot 12 — `/linux-triage` output for the healthy server
-
-Add your screenshot here.
-
+![alt text](screenshots/linux-triage-successful-recoveryass6.png)
 ---
 
 ### Notes
@@ -554,8 +552,6 @@ https://www.linkedin.com/posts/ifeoma-akabueze_dmibypravinmishra-agenticai-claud
 ---
 
 # GitHub Repository URL
-
-Paste the URL of your GitHub folder or repository containing the assignment files here:
 
 https://github.com/Ifeoma-Obinna23/devops-micro-internship-pravinmishra.git
 
