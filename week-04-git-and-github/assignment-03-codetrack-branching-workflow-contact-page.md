@@ -74,8 +74,6 @@ Add the provided Contact Page link to `index.html` and commit it separately usin
 
 #### Screenshot 6 — Output of `git status` showing `index.html` as modified before staging
 
-Add your screenshot here.
-
 ---
 
 #### Screenshot 7 — Output of `git commit`
