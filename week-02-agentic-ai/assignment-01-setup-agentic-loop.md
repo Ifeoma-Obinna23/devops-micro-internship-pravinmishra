@@ -19,7 +19,6 @@ Install the Claude Code CLI globally and authenticate it using your Anthropic ac
 ### Evidence
 
 #### Screenshot 1 — Terminal showing `claude --version` with the version number visible
-
 ![alt text](screenshots/Claude-version.png)
 
 ---
@@ -53,7 +52,6 @@ Interact with Claude Code and observe how it performs the Agentic Loop (Gather �
 
 #### Screenshot 4 — Claude's response to the first question, showing it read the files (tool calls visible)
 
-Add your screenshot here.
 ![alt text](screenshots/First-question.png)
 ---
 
@@ -73,8 +71,6 @@ Add your screenshot here.
 ---
 
 ## GitHub Repository URL
-
-Paste your forked repository URL here:
 
 https://github.com/Ifeoma-Obinna23/devops-micro-internship-pravinmishra.git
 
