@@ -318,9 +318,7 @@ Turn the Bash script into a reusable, manually invoked Agentic AI workflow.
 
 
 #### Screenshot 12 — `/linux-triage` output for the healthy server
-
-
-
+![alt text](screenshots/linux-triage-successful-recoveryass6.png)
 
 ### Notes
 
@@ -533,7 +531,6 @@ This incident followed Gather → Analyze → Human Act → Verify. The Bash scr
 
 https://www.linkedin.com/posts/ifeoma-akabueze_dmibypravinmishra-agenticai-claudecode-ugcPost-7484718759702790144-rHd-/?
 
-
 #### Screenshot — Published LinkedIn post
 
 ![alt text](screenshots/LinkedIn-post-ass6.png)
@@ -542,7 +539,6 @@ https://www.linkedin.com/posts/ifeoma-akabueze_dmibypravinmishra-agenticai-claud
 # GitHub Repository URL
 
 https://github.com/Ifeoma-Obinna23/devops-micro-internship-pravinmishra.git
-
 
 # Submission Instructions
 

@@ -26,10 +26,7 @@ Confirm you are working in your own fork, then create a dedicated branch for thi
 ### Evidence
 
 #### Screenshot 1 — Output of git remote -v and git branch showing the new branch
-
 ![alt text](screenshots/Output-git-branch-remote-ass6.png)
-
-
 
 ### Notes
 
@@ -48,9 +45,7 @@ On your own fork of this repository (the one you've been submitting your DMI wor
 ### Evidence
 
 #### Screenshot 1 — Output of  `git status` showing the staged file on feature/ai-pr-ready
-
 ![alt text](screenshots/git-status-showing-stagedfile-ass6.png)
-
 
 
 ### Notes
@@ -70,12 +65,10 @@ Create a tracked, shareable pre-commit hook that blocks a commit containing secr
 ### Evidence
 
 #### Screenshot 2 — `hooks/pre-commit` open in VS Code showing the full script
-
 ![alt text](screenshots/hooks-pre-commit-ass6.png)
 ---
 
 #### Screenshot 3 — Output of `git config core.hooksPath` confirming it points to `hooks`
-
 ![alt text](screenshots/Output-git-config.core-ass6.png)
 
 
@@ -110,12 +103,10 @@ Attempt to commit the staged file from Task 1 and show the hook rejecting it.
 ### Evidence
 
 #### Screenshot 4 — Terminal showing `git commit` rejected with the hook's "BLOCKED" message naming the exact file
-
 ![alt text](screenshots/git-commit-attempt-blocked-ass6.png)
 ---
 
 ### Notes
-
 **1. Which line in `hooks/pre-commit` matched your fake key, and why did it match?**
 
 if git diff --cached -- "$file" | grep -E '^\+' | grep -qE 'AKIA[0-9A-Z]{16}|-----BEGIN (RSA|OPENSSH|PRIVATE) KEY-----'; then
@@ -138,20 +129,17 @@ Create a manually invoked Claude Code skill that reads your staged changes and p
 ### Evidence
 
 #### Screenshot 5 — `SKILL.md` frontmatter showing `allowed-tools: Bash, Read, Grep` (no `Write`) and `disable-model-invocation: true`
-
 ![alt text](screenshots/Skill.md-showingallowed-bash-read-grep-ass6.png)
 
 
 
 #### Screenshot 6 — `/pr-ready` output while the risky file is still staged, showing it flagged the secret and/or debug statement
-
 ![alt text](screenshots/pr-ready-output-ass6.png)
 
 
 ### Notes
 
 **1. Why does `/pr-ready` have `Bash` and `Read` but not `Write`?**
-
 /pr-ready's entire job is to observe and report — it needs Bash to run commands like git diff --cached and git status, and Read/Grep to inspect file contents and search for risky patterns. None of that requires changing anything on disk. Leaving Write out of allowed-tools isn't an accident — it's a deliberate, structural boundary that makes it impossible for the skill to edit files, even if it wanted to, even if a prompt injection or a misinterpreted instruction tried to push it that way. The permission model enforces the design intent at the tool level, not just as a written instruction the AI is trusted to follow. This keeps the human as the only one who can actually act — commit, push, or open the PR — while the AI's role stays limited to advising. It's the same principle behind giving someone "read-only" access to a system: the restriction isn't about trust in behavior, it's about removing the capability to do harm in the first place.
 
 
@@ -171,12 +159,10 @@ Remove the secret and debug statement, then prove both gates now pass clean.
 ### Evidence
 
 #### Screenshot 7 — `git commit` succeeding after the fix (no BLOCKED message)
-
 ![alt text](screenshots/git-commit-after-fix-ass6.png)
 
 
 #### Screenshot 8 — Second `/pr-ready` run showing a clean risk report and a drafted PR title + description
-
 ![alt text](screenshots/pr-ready-output-after-fix-ass6.png)
 
 
@@ -184,7 +170,6 @@ Remove the secret and debug statement, then prove both gates now pass clean.
 ### Notes
 
 **1. What exactly did you change to satisfy the pre-commit hook?**
-
 I removed the two lines in scripts/notify.sh that were triggering the hook's checks:
 
 `AWS_ACCESS_KEY_ID=AKIA` immediately followed by 16 uppercase letters — this matched the hook's regex (`AKIA[0-9A-Z]{16}`), which is what caused the `BLOCKED: possible secret` message on the first attempt.
@@ -209,13 +194,11 @@ Push your branch and open a real Pull Request, using `/pr-ready`'s drafted title
 ### Evidence
 
 #### Screenshot 9 — Your Pull Request showing the base repository is your own fork, plus the title and description, with the `/pr-ready` draft visible for comparison (paste it in the PR conversation or your notes below)
-
 ![alt text](<screenshots/Pull-Request -showing-the-base-repo-ass6.png>)
 
 
 
 #### PR Link
-
 https://github.com/Ifeoma-Obinna23/devops-micro-internship-pravinmishra/pull/1
 
 
@@ -308,7 +291,6 @@ Publish a LinkedIn post summarizing what you built and what you learned about co
 ### Evidence
 
 #### LinkedIn Post URL
-
 https://www.linkedin.com/posts/ifeoma-akabueze_dmibypravinmishra-agenticai-claudecode-ugcPost-7486547167722115073-U0_Q/?
 
 
@@ -341,7 +323,6 @@ Verification isn't optional — re-running the same checks after a fix (not just
 ---
 
 ## GitHub Repository URL
-
 https://github.com/Ifeoma-Obinna23/devops-micro-internship-pravinmishra
 
 

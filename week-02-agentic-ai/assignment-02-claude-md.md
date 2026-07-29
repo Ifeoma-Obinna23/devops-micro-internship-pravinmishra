@@ -44,7 +44,6 @@ Update the generated `CLAUDE.md` file by adding project-specific instructions ac
 ### Evidence
 
 #### Screenshot 3 — Your customized CLAUDE.md in VS Code showing all 5 sections (scroll to show the full file)
-
 ![alt text](screenshots/Claude-files-details.png)
 
 
@@ -57,14 +56,12 @@ Verify that Claude’s behavior changes after adding `CLAUDE.md` by running a ne
 ### Evidence
 
 #### Screenshot 4 — Claude's specific, detailed answer after reading CLAUDE.md (Claude mentioning S3, CloudFront and Terraform)
-
 ![alt text](screenshots/After-Claude.md.png)
 ![alt text](screenshots/After-Claude.md-2.png)
 
 #### Screenshot 5 — Claude refusing or warning against adding React because of the "No JavaScript" convention defined in CLAUDE.md
 
 ![alt text](screenshots/Second-question-after-Claude.md.png)
-
 
 
 # Task 5 — Commit and push your changes to your fork in GitHub
@@ -88,9 +85,7 @@ Commit the `CLAUDE.md` file and push it to your GitHub fork so the project instr
 - Push your final changes to your forked repository
 
 
-
 ## GitHub Repository URL
-
 https://github.com/Ifeoma-Obinna23/Ultimate-Agentic-DevOps-with-Claude-Code.git
 
 

@@ -20,11 +20,9 @@ Install the Claude Code CLI globally and authenticate it using your Anthropic ac
 
 ![alt text](screenshots/Claude-version.png)
 
-
 #### Screenshot 2 — Claude Code authenticated and showing the terminal prompt (your name visible)
 
 ![alt text](screenshots/Claude-authenticated.png)
-
 
 # Task 2 — Fork and Clone the Starter Repository
 
@@ -38,7 +36,6 @@ Fork the provided GitHub repository, clone it to your local machine, and open it
 
 ![alt text](screenshots/File-tree.png)
 
-
 # Task 3 — Observe the Agentic Loop
 
 ## Goal
@@ -48,14 +45,11 @@ Interact with Claude Code and observe how it performs the Agentic Loop (Gather �
 ### Evidence
 
 #### Screenshot 4 — Claude's response to the first question, showing it read the files (tool calls visible)
-
 ![alt text](screenshots/First-question.png)
-
 
 #### Screenshot 5 — Claude's response to the second question, showing it ran a command and reported the line count
 
 ![alt text](screenshots/Second-question.png)
-
 
 # Submission Instructions
 
@@ -87,7 +81,7 @@ DevOps Micro Internship (DMI) is a project-based DevOps program run by Pravin Mi
 
 It helps learners build strong DevOps foundations with hands-on experience.
 
----
+
 
 ## 📌 Resources
 
