@@ -81,8 +81,6 @@ Add a professional bio to your GitHub profile — and optionally your location, 
 
 ## GitHub Profile URL
 
-Paste your GitHub profile URL here:
-
 https://github.com/Ifeoma-Obinna23
 
 ---
