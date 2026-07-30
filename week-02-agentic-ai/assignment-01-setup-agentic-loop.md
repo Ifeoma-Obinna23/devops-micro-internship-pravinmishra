@@ -2,13 +2,11 @@
 
 Part of the DevOps Micro Internship (DMI) Cohort 3 with Agentic AI
 
----
 
 ## Purpose
 
 In this assignment, you will set up your local development environment for Agentic AI using Claude Code. You will install and authenticate Claude Code CLI, fork and clone the starter repository, and observe how the Agentic Loop (Gather → Act → Verify) works in practice.
 
----
 
 # Task 1 — Install Claude Code
 
@@ -19,14 +17,12 @@ Install the Claude Code CLI globally and authenticate it using your Anthropic ac
 ### Evidence
 
 #### Screenshot 1 — Terminal showing `claude --version` with the version number visible
-![alt text](screenshots/Claude-version.png)
 
----
+![alt text](screenshots/Claude-version.png)
 
 #### Screenshot 2 — Claude Code authenticated and showing the terminal prompt (your name visible)
 
 ![alt text](screenshots/Claude-authenticated.png)
----
 
 # Task 2 — Fork and Clone the Starter Repository
 
@@ -40,8 +36,6 @@ Fork the provided GitHub repository, clone it to your local machine, and open it
 
 ![alt text](screenshots/File-tree.png)
 
----
-
 # Task 3 — Observe the Agentic Loop
 
 ## Goal
@@ -49,17 +43,12 @@ Fork the provided GitHub repository, clone it to your local machine, and open it
 Interact with Claude Code and observe how it performs the Agentic Loop (Gather → Act → Verify) while answering project-related questions.
 
 ### Evidence
-
 #### Screenshot 4 — Claude's response to the first question, showing it read the files (tool calls visible)
-
 ![alt text](screenshots/First-question.png)
----
 
 #### Screenshot 5 — Claude's response to the second question, showing it ran a command and reported the line count
 
 ![alt text](screenshots/Second-question.png)
-
----
 
 # Submission Instructions
 
@@ -68,13 +57,9 @@ Interact with Claude Code and observe how it performs the Agentic Loop (Gather �
 - Push your completed work to your forked repository
 - Submit your GitHub repository URL below
 
----
-
 ## GitHub Repository URL
-
 https://github.com/Ifeoma-Obinna23/devops-micro-internship-pravinmishra.git
 
----
 
 # Completion Checklist
 
@@ -93,14 +78,14 @@ DevOps Micro Internship (DMI) is a project-based DevOps program run by Pravin Mi
 
 It helps learners build strong DevOps foundations with hands-on experience.
 
----
+
 
 ## 📌 Resources
 
-- 🌐 DMI Official Website: https://dmi.pravinmishra.com?utm_source=github&utm_medium=readme  
-- 🎓 University: https://university.pravinmishra.com?utm_source=github&utm_medium=readme  
-- 💬 Discord Community: https://discord.pravinmishra.com?utm_source=github&utm_medium=readme  
-- 📝 Blog: https://dmi.pravinmishra.com/blog?utm_source=github&utm_medium=readme  
+- 🌐 DMI Official Website: https://pravinmishra.com/dmi  
+- 🎓 DevOps for Beginners (Udemy): https://www.udemy.com/course/devops-for-beginners-docker-k8s-cloud-cicd-4-projects/  
+- 🎓 Agentic AI DevOps with Claude Code: https://www.udemy.com/course/ultimate-agentic-ai-devops-with-claude-code/  
+- 🎓 DevOps with Claude Code: Terraform, EKS, ArgoCD & Helm: https://www.udemy.com/course/devops-with-claude-code-terraform-eks-argocd-helm/  
 - ▶️ YouTube Playlist: https://www.youtube.com/playlist?list=PLFeSNDtI4Cho  
 - 🔗 Pravin Mishra (LinkedIn): https://www.linkedin.com/in/pravin-mishra-aws-trainer/  
 - 🏢 CloudAdvisory (LinkedIn): https://www.linkedin.com/company/thecloudadvisory/

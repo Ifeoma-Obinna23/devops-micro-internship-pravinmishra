@@ -379,8 +379,6 @@ If credentials such as SSH private keys, API keys, database passwords, or .env f
 
 **5. Why should cloud resources be stopped or terminated when they are no longer needed?**
 
-Write your answer here.
-
 Cloud providers like AWS charge for resources based on usage time, so an EC2 instance left running unnecessarily continues to consume compute hours, storage, and potentially data transfer — costs that add up even if the instance isn't doing anything useful. Beyond cost, an idle but still-running server also remains a live security exposure — it's still reachable, still being scanned by bots, and still a potential target, even if no one is actively using it. Stopping or terminating resources that are no longer needed reduces both unnecessary spending and unnecessary risk.
 
 # LinkedIn Post (Required)

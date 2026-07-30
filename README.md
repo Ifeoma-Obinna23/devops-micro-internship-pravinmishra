@@ -28,8 +28,8 @@
 
 This is not a course. It is an internship-style program — real deployments, real pipelines, real evidence reviewed by mentors every week.
 
-- 🌐 Program Website: https://dmi.pravinmishra.com?utm_source=github&utm_medium=readme
-- 💬 Discord Community: https://discord.pravinmishra.com?utm_source=github&utm_medium=readme
+- 🌐 Program Website: https://dmi.pravinmishra.com
+- 💬 Discord Community: https://discord.pravinmishra.com
 - 📺 YouTube: [Pravin Mishra](https://www.youtube.com/@awswithpravinmishra)
 - 🔗 Instructor: [LinkedIn](https://www.linkedin.com/in/pravin-mishra-aws-trainer/)
 
@@ -61,7 +61,7 @@ This is not a course. It is an internship-style program — real deployments, re
 
 **Preview — what your full stack looks like:**
 
-[![Week 00](./badges/week-00.svg)](./week-00-internet-and-networking/)[![Week 01](./badges/week-01.svg)](./week-01-success-mindset/)[![Week 02](./badges/week-02.svg)](./week-02-agentic-ai/)[![Week 03](./badges/week-03.svg)](./week-03-linux-and-bash-for-devops/)[![Week 04](./badges/week-04.svg)](./week-04-git-and-github/)[![Week 05](./badges/week-05.svg)](./week-05-devops-lifecycle/)[![Week 06](./badges/week-06.svg)](./week-06-aws-cloud/)[![Week 07](./badges/week-07.svg)](./week-07-azure-cloud/)[![Week 08](./badges/week-08.svg)](./week-08-terraform/)[![Week 09](./badges/week-09.svg)](./week-09-ansible/)[![Week 10](./badges/week-10.svg)](./week-10-azure-devops/)[![Week 11](./badges/week-11.svg)](./week-11-docker/)[![Week 12](./badges/week-12.svg)](./week-12-kubernetes/)[![Week 13](./badges/week-13.svg)](./week-13-final-project/)
+[![Week 00](./badges/week-00.svg)](./week-00-internet-and-networking/)[![Week 01](./badges/week-01.svg)](./week-01-success-mindset/)[![Week 02](./badges/week-02.svg)](./week-02-agentic-ai/)[![Week 03](./badges/week-03.svg)](./week-03-linux-and-bash-for-devops/)[![Week 04](./badges/week-04.svg)](week-04-git-and-github/)[![Week 05](./badges/week-05.svg)](./week-05-devops-lifecycle/)[![Week 06](./badges/week-06.svg)](./week-06-aws-cloud/)[![Week 07](./badges/week-07.svg)](./week-07-azure-cloud/)[![Week 08](./badges/week-08.svg)](./week-08-terraform/)[![Week 09](./badges/week-09.svg)](./week-09-ansible/)[![Week 10](./badges/week-10.svg)](./week-10-azure-devops/)[![Week 11](./badges/week-11.svg)](./week-11-docker/)[![Week 12](./badges/week-12.svg)](./week-12-kubernetes/)[![Week 13](./badges/week-13.svg)](./week-13-final-project/)
 
 ---
 
@@ -79,8 +79,8 @@ Week 02 → Agentic AI with Claude Code
 Week 03 → Linux & Bash for DevOps
 [![Week 03 – Linux & Bash](./badges/week-03.svg)](./week-03-linux-and-bash-for-devops/)
 
-<!-- Week 04 → Git & GitHub -->
-<!-- [![Week 04 – Git](./badges/week-04.svg)](./week-04-git-and-github/) -->
+Week 04 → Git & GitHub
+[![Week 04 – Git](./badges/week-04.svg)](week-04-git-and-github/)
 
 <!-- Week 05 → DevOps Lifecycle & Agile -->
 <!-- [![Week 05 – Agile](./badges/week-05.svg)](./week-05-devops-lifecycle/) -->
@@ -131,9 +131,9 @@ Week 03 → Linux & Bash for DevOps
 | Week | Topic | Status | Assignment | LinkedIn Post | Blog Post |
 |------|-------|--------|------------|---------------|-----------|
 | 00 | Internet & Networking Basics | ✅ Completed | ✅ Completed | https://www.linkedin.com/posts/ifeoma-akabueze_flowchart-maker-and-online-diagram-software-activity-7457765358230364160-RFIu? | https://medium.com/@ifeomaohachosim/devops-micro-internship-with-agentic-ai-cd9da6767f39 |
-| 01 | Success Mindset | ✅ Completed | ✅ Completed | —https://www.linkedin.com/posts/ifeoma-akabueze_i-was-asked-to-write-about-my-life-in-3-7-share-7478849190475829250-Frx6/? | https://medium.com/@ifeomaohachosim/the-woman-who-prepared-before-the-opportunity-arrived-0382de924903?postPublishedType=initial— |
+| 01 | Success Mindset | ✅ Completed | ✅ Completed | —https://www.linkedin.com/posts/ifeoma-akabueze_i-was-asked-to-write-about-my-life-in-3-7-share-7478849190475829250-Frx6/? | https://medium.com/@ifeomaohachosim/the-woman-who-prepared-before-the-opportunity-arrived-0382de924903 |
 | 02 | Agentic AI with Claude Code | ✅ Completed | ✅ Completed | https://www.linkedin.com/posts/ifeoma-akabueze_dmibypravinmishra-agenticai-claudecode-activity-7481470279379087360-iKtT? | https://medium.com/@ifeomaohachosim/my-first-light-bulb-moment-with-agentic-ai-5e98bff4c0d0 |
-| 03 | Linux & Bash for DevOps |✅ Completed |✅ Completed| https://www.linkedin.com/posts/ifeoma-akabueze_dmibypravinmishra-agenticai-claudecode-activity-7484718761107861507-g38d? | https://medium.com/p/1d7512d013c5|
+| 03 | Linux & Bash for DevOps |✅ Completed |✅ Completed| https://www.linkedin.com/posts/ifeoma-akabueze_dmibypravinmishra-agenticai-claudecode-activity-7484718761107861507-g38d? | https://medium.com/@ifeomaohachosim/what-building-an-ai-assisted-linux-health-check-taught-me-about-devops-1d7512d013c5 |
 | 04 | Git & GitHub | ✅ Completed | ✅ Completed | https://www.linkedin.com/posts/ifeoma-akabueze_dmibypravinmishra-agenticai-claudecode-ugcPost-7486547167722115073-U0_Q/? | https://medium.com/@ifeomaohachosim/from-command-line-to-pull-request-my-first-full-git-github-collaboration-workflow-1936893c9b7e |
 | 05 | DevOps Lifecycle & Agile | ⬜ Not Started | ⏳ Pending | — | — |
 | 06 | AWS Cloud | ⬜ Not Started | ⏳ Pending | — | — |
@@ -164,5 +164,5 @@ If you found this repo useful or want to follow my DevOps journey:
 
 - ⭐ Star this repo
 - 🔗 Connect with me on [LinkedIn](#)
-- 🌐 Learn more about the program: https://dmi.pravinmishra.com?utm_source=github&utm_medium=readme
-- 💬 Join the community: https://discord.pravinmishra.com?utm_source=github&utm_medium=readme
+- 🌐 Learn more about the program: https://dmi.pravinmishra.com
+- 💬 Join the community: https://discord.pravinmishra.com

@@ -2,13 +2,11 @@
 
 Part of the DevOps Micro Internship (DMI) Cohort 3 with Agentic AI
 
----
 
 ## Purpose
 
 In this assignment, you will deploy a React application on an Ubuntu EC2 instance and serve it using Nginx. You will provision a Linux server, install the required tools, personalize the application with your details, and verify that it is publicly accessible via a browser.
 
----
 
 # Task 1 — Setup Environment (Node.js & npm)
 
@@ -34,7 +32,7 @@ Install Nginx, start the service, and confirm it is running.
 
 ![alt text](screenshots/nginx-systemctl-status.png)
 
----
+
 
 # Task 3 — Clone React Application
 
@@ -48,7 +46,6 @@ Clone the project repository and verify the project files are present.
 
 ![alt text](screenshots/ls-my=react-app.png)
 
----
 
 # Task 4 — Modify Application (Personalization)
 
@@ -62,7 +59,6 @@ Update `App.js` with your full name and the current date.
 
 ![alt text](screenshots/Output-nano-App.js.png)
 
----
 
 # Task 5 — Build React Application
 
@@ -76,7 +72,6 @@ Install dependencies and generate the production build.
 
 ![alt text](screenshots/ls-my-react-showing-build.png)
 
----
 
 # Task 6 — Deploy React Build to Nginx Web Root
 
@@ -90,7 +85,6 @@ Copy the production build files to the Nginx web root directory.
 
 ![alt text](screenshots/Output-ls-var-html.png)
 
----
 
 # Task 7 — Configure Nginx for React Application
 
@@ -104,7 +98,6 @@ Apply Nginx configuration for React routing and confirm the service is active.
 
 ![alt text](screenshots/active-nginx.png)
 
----
 
 #### Screenshot 8 — Output of `cat /etc/nginx/sites-available/default` showing the Nginx config
 
@@ -122,13 +115,11 @@ Verify the React application is publicly accessible via the server's public IP.
 
 ![alt text](screenshots/curl-command-showing-pub-ip.png)
 
----
 
 #### Screenshot 10 — Browser showing the deployed React app at `http://<public-ip>` with your name and date visible
 
 ![alt text](screenshots/My-React-web-page.png)
 
----
 
 # LinkedIn Post (Required)
 
@@ -138,14 +129,10 @@ Verify the React application is publicly accessible via the server's public IP.
 
 https://www.linkedin.com/posts/ifeoma-akabueze_dmibypravinmishra-agenticai-claudecode-share-7483569003345596416--dng/?
 
-
----
-
 #### Screenshot — LinkedIn post showing the deployed application
 
 ![alt text](screenshots/LinkedIn-post-ass2.png)
 
----
 
 # Submission Instructions
 
@@ -153,7 +140,7 @@ https://www.linkedin.com/posts/ifeoma-akabueze_dmibypravinmishra-agenticai-claud
 - Full name must be visible in required screenshots
 - Do not expose sensitive information (keys, passwords, account IDs)
 
----
+
 
 # Completion Checklist
 
@@ -169,7 +156,7 @@ https://www.linkedin.com/posts/ifeoma-akabueze_dmibypravinmishra-agenticai-claud
 - [ ] LinkedIn post published and URL submitted
 - [ ] No sensitive data exposed
 
----
+
 
 ## 📌 About DMI & CloudAdvisory
 
@@ -177,18 +164,18 @@ DevOps Micro Internship (DMI) is a project-based DevOps program run by Pravin Mi
 
 It helps learners build strong DevOps foundations with hands-on experience.
 
----
+
 
 ## 📌 Resources
 
-- 🌐 DMI Official Website: https://dmi.pravinmishra.com?utm_source=github&utm_medium=readme  
-- 🎓 University: https://university.pravinmishra.com?utm_source=github&utm_medium=readme  
-- 💬 Discord Community: https://discord.pravinmishra.com?utm_source=github&utm_medium=readme  
-- 📝 Blog: https://dmi.pravinmishra.com/blog?utm_source=github&utm_medium=readme  
+- 🌐 DMI Official Website: https://pravinmishra.com/dmi  
+- 🎓 DevOps for Beginners (Udemy): https://www.udemy.com/course/devops-for-beginners-docker-k8s-cloud-cicd-4-projects/  
+- 🎓 Agentic AI DevOps with Claude Code: https://www.udemy.com/course/ultimate-agentic-ai-devops-with-claude-code/  
+- 🎓 DevOps with Claude Code: Terraform, EKS, ArgoCD & Helm: https://www.udemy.com/course/devops-with-claude-code-terraform-eks-argocd-helm/  
 - ▶️ YouTube Playlist: https://www.youtube.com/playlist?list=PLFeSNDtI4Cho  
 - 🔗 Pravin Mishra (LinkedIn): https://www.linkedin.com/in/pravin-mishra-aws-trainer/  
 - 🏢 CloudAdvisory (LinkedIn): https://www.linkedin.com/company/thecloudadvisory/
 
----
+
 
 *This submission is part of DevOps Micro Internship (DMI) Cohort 3 — Agentic AI Track.*

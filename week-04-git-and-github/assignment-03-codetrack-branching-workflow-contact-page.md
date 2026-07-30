@@ -2,13 +2,9 @@
 
 Part of the DevOps Micro Internship (DMI) Cohort 3 with Agentic AI
 
----
-
 ## Purpose
 
 In this assignment, you will add a new Contact page to CodeTrack using a clean feature-branch workflow. You will keep each change in a separate commit, prove that your default branch remains unchanged before the merge, and validate the result after merging.
-
----
 
 # Task 1 — Confirm Repository State and Default Branch
 
@@ -22,8 +18,6 @@ Start from a clean default branch (`main` or `master`) and confirm the repositor
 
 ![alt text](screenshots/Output-git-status-git-brannch-ass3.png)
 
----
-
 # Task 2 — Create and Switch to a Feature Branch
 
 ## Goal
@@ -35,8 +29,6 @@ Create a branch named exactly `feature/contact-page` and switch to it.
 #### Screenshot 2 — Output of `git checkout -b feature/contact-page` and `git branch` showing `* feature/contact-page`
 
 ![alt text](screenshots/Output-git-branch-creation-ass3.png)
-
----
 
 # Task 3 — Add contact.html on the Feature Branch
 
@@ -50,19 +42,14 @@ Create `contact.html` with the provided content and commit it alone using the me
 
 ![alt text](screenshots/ls-showing-contact-html-ass3.png)
 
----
 
 #### Screenshot 4 — Output of `git commit`
 
 ![alt text](screenshots/Output-git-commit-ass3.png)
 
----
-
 #### Screenshot 5 — Output of `git log --oneline -3` showing the new commit
 
 ![alt text](screenshots/Output-git-log-oneline-ass3.png)
-
----
 
 # Task 4 — Add the Contact Link to index.html
 
@@ -74,19 +61,14 @@ Add the provided Contact Page link to `index.html` and commit it separately usin
 
 #### Screenshot 6 — Output of `git status` showing `index.html` as modified before staging
 
----
-
 #### Screenshot 7 — Output of `git commit`
 
 ![alt text](screenshots/Output-git-commit-in-ass3.png)
 
----
 
 #### Screenshot 8 — Browser showing the Contact Page link on the homepage while on `feature/contact-page`
 
 ![alt text](screenshots/Browser-showing-contact-page-ass3.png)
-
----
 
 # Task 5 — Verify Isolation (Prove the Default Branch Is Unchanged)
 
@@ -100,13 +82,11 @@ Switch back to the default branch and confirm that `contact.html` and the Contac
 
 ![alt text](screenshots/ls-contact-html-absent-ass3.png)
 
----
 
 #### Screenshot 10 — Browser showing the homepage on the default branch with no Contact Page link
 
 ![alt text](screenshots/browser-showing-default-hompage-ass3.png)
 
----
 
 # Task 6 — Merge the Feature Branch into the Default Branch
 
@@ -120,19 +100,16 @@ Merge `feature/contact-page` into your default branch and confirm the Contact pa
 
 ![alt text](screenshots/Output-git-merge-feature-contact-ass3.png)
 
----
 
 #### Screenshot 12 — Output of `ls` showing `contact.html` after the merge
 
 ![alt text](screenshots/ls-showing-contact-html-asss3.png)
 
----
 
 #### Screenshot 13 — Browser showing the Contact page opened from the homepage link on the default branch
 
 ![alt text](screenshots/browser-showing-contactpage-ass3.png)
 
----
 
 # Task 7 — Inspect History (Graph View)
 
@@ -146,7 +123,6 @@ Display the repository history as a graph and locate both feature commits.
 
 ![alt text](screenshots/git-log-oneline-graph-ass3.png)
 
----
 
 # Task 8 — Optional Cleanup (Delete the Feature Branch)
 
@@ -160,7 +136,6 @@ Delete the merged `feature/contact-page` branch to keep your branch list clean.
 
 ![alt text](screenshots/Output-showing-feature-contact-del-ass3.png)
 
----
 
 # Submission Instructions
 
@@ -169,7 +144,6 @@ Delete the merged `feature/contact-page` branch to keep your branch list clean.
 - Evidence must show `contact.html` and the homepage link were absent before merging, and working after merging
 - Do not expose passwords, access tokens, or private keys
 
----
 
 # Completion Checklist
 
@@ -195,10 +169,10 @@ It helps learners build strong DevOps foundations with hands-on experience.
 
 ## 📌 Resources
 
-- 🌐 DMI Official Website: https://dmi.pravinmishra.com?utm_source=github&utm_medium=readme  
-- 🎓 University: https://university.pravinmishra.com?utm_source=github&utm_medium=readme  
-- 💬 Discord Community: https://discord.pravinmishra.com?utm_source=github&utm_medium=readme  
-- 📝 Blog: https://dmi.pravinmishra.com/blog?utm_source=github&utm_medium=readme  
+- 🌐 DMI Official Website: https://pravinmishra.com/dmi  
+- 🎓 DevOps for Beginners (Udemy): https://www.udemy.com/course/devops-for-beginners-docker-k8s-cloud-cicd-4-projects/  
+- 🎓 Agentic AI DevOps with Claude Code: https://www.udemy.com/course/ultimate-agentic-ai-devops-with-claude-code/  
+- 🎓 DevOps with Claude Code: Terraform, EKS, ArgoCD & Helm: https://www.udemy.com/course/devops-with-claude-code-terraform-eks-argocd-helm/  
 - ▶️ YouTube Playlist: https://www.youtube.com/playlist?list=PLFeSNDtI4Cho  
 - 🔗 Pravin Mishra (LinkedIn): https://www.linkedin.com/in/pravin-mishra-aws-trainer/  
 - 🏢 CloudAdvisory (LinkedIn): https://www.linkedin.com/company/thecloudadvisory/

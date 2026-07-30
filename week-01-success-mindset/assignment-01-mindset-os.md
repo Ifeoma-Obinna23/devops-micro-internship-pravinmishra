@@ -149,7 +149,6 @@ Her story ultimately became proof that becoming is often a lonely journey—but 
 
 ### Public Link
 
-Paste your link here:
 https://medium.com/@ifeomaohachosim/the-woman-who-prepared-before-the-opportunity-arrived-0382de924903
 
 ---
@@ -364,8 +363,6 @@ Time management
 
 ### LinkedIn Post
 
-Paste your LinkedIn post link here:
-
 I was asked to write about my life in 3-7 years from now. Like a version 2.0 by my mentor, Pravin Mishra. I was also instructed to write like its being written by a journalist. At first, everything felt unorganized, with every point flying around in my head. The pictures have always been vivid, but the path to achieving them was unclear. This took deep thought and reflection, and I know it's not the whole picture, but I plan to revisit it soon to remind myself of the path I walked through.
 
 "What once felt like a long season of waiting became the foundation for an extraordinary life. While others saw delays, she chose to prepare by building her skills, expanding her knowledge, and refusing to let uncertainty define her future.
@@ -379,7 +376,7 @@ Looking back, her journey proved that success is rarely an overnight event. It i
 
 - LinkedIn Post URL: https://www.linkedin.com/posts/ifeoma-akabueze_i-was-asked-to-write-about-my-life-in-3-7-share-7478849190475829250-Frx6/?  
 
-- Blog / Medium : https://medium.com/@ifeomaohachosim/the-woman-who-prepared-before-the-opportunity-arrived-0382de924903?postPublishedType=initial  
+- Blog / Medium : https://medium.com/@ifeomaohachosim/the-woman-who-prepared-before-the-opportunity-arrived-0382de924903? 
 
 ---
 

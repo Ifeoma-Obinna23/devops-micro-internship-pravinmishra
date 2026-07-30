@@ -54,7 +54,8 @@ You can publish your blog on:
 
 Blog Link:
 
-`________https://medium.com/@ifeomaohachosim/my-first-light-bulb-moment-with-agentic-ai-why-my-cost-saving-bot-uses-the-cheaper-brain-this-70a9261129ba?
+https://medium.com/@ifeomaohachosim/my-first-light-bulb-moment-with-agentic-ai-why-my-cost-saving-bot-uses-the-cheaper-brain-this-70a9261129ba?
+
 
 ---
 
