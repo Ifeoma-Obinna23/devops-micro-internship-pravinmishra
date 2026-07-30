@@ -130,7 +130,7 @@ https://www.linkedin.com/posts/ifeoma-akabueze_dmibypravinmishra-agenticai-claud
 
 #### Screenshot — LinkedIn post showing your successfully created Pull Request
 
-https://www.linkedin.com/posts/ifeoma-akabueze_dmibypravinmishra-agenticai-claudecode-share-7486232876494077952-q7iT/?
+![alt text](screenshots/LinkedIn-post-showing-successfully-created-PR-ass5.png)
 
 ---
 

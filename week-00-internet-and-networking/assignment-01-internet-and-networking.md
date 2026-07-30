@@ -26,7 +26,7 @@ Take a screenshot of your interaction showing:
 
 Save your screenshot in the `screenshots` folder and update the file name below.
 
-![alt text](CGPT-Prompt-ass1.png)
+![alt text](screenshots/CGPT-Prompt-ass1.png)
 
 
 ---
@@ -213,7 +213,6 @@ Add the following credit note at the end of your post:
 
 ## LinkedIn Post URL
 
-Paste your LinkedIn post URL here:
 
 https://www.linkedin.com/posts/ifeoma-akabueze_flowchart-maker-and-online-diagram-software-activity-7457765358230364160-RFIu?
 ```
