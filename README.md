@@ -82,8 +82,8 @@ Week 03 → Linux & Bash for DevOps
 Week 04 → Git & GitHub
 [![Week 04 – Git](./badges/week-04.svg)](week-04-git-and-github/)
 
-<!-- Week 05 → DevOps Lifecycle & Agile -->
-<!-- [![Week 05 – Agile](./badges/week-05.svg)](./week-05-devops-lifecycle/) -->
+Week 05 → DevOps Lifecycle & Agile -->
+[![Week 05 – Agile](./badges/week-05.svg)](./week-05-devops-lifecycle/) -->
 
 <!-- Week 06 → AWS Cloud -->
 <!-- [![Week 06 – AWS](./badges/week-06.svg)](./week-06-aws-cloud/) -->
@@ -135,7 +135,7 @@ Week 04 → Git & GitHub
 | 02 | Agentic AI with Claude Code | ✅ Completed | ✅ Completed | https://www.linkedin.com/posts/ifeoma-akabueze_dmibypravinmishra-agenticai-claudecode-activity-7481470279379087360-iKtT? | https://medium.com/@ifeomaohachosim/my-first-light-bulb-moment-with-agentic-ai-5e98bff4c0d0 |
 | 03 | Linux & Bash for DevOps |✅ Completed |✅ Completed| https://www.linkedin.com/posts/ifeoma-akabueze_dmibypravinmishra-agenticai-claudecode-activity-7484718761107861507-g38d? | https://medium.com/@ifeomaohachosim/what-building-an-ai-assisted-linux-health-check-taught-me-about-devops-1d7512d013c5 |
 | 04 | Git & GitHub | ✅ Completed | ✅ Completed | https://www.linkedin.com/posts/ifeoma-akabueze_dmibypravinmishra-agenticai-claudecode-ugcPost-7486547167722115073-U0_Q/? | https://medium.com/@ifeomaohachosim/from-command-line-to-pull-request-my-first-full-git-github-collaboration-workflow-1936893c9b7e |
-| 05 | DevOps Lifecycle & Agile | ⬜ Not Started | ⏳ Pending | — | — |
+| 05 | DevOps Lifecycle & Agile | ✅ Completed | ✅ Completed | https://www.linkedin.com/posts/ifeoma-akabueze_agile-jira-agenticai-ugcPost-7492359869149302784-6rjj/? | https://medium.com/@ifeomaohachosim/building-a-read-only-sprint-health-skill-with-claude-code-and-jira-mcp-0b97ac44c139? |
 | 06 | AWS Cloud | ⬜ Not Started | ⏳ Pending | — | — |
 | 07 | Azure Cloud | ⬜ Not Started | ⏳ Pending | — | — |
 | 08 | Terraform | ⬜ Not Started | ⏳ Pending | — | — |

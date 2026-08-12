@@ -19,14 +19,12 @@ Create the footer Story (`Add footer with version and deploy date`, 1 point, `fr
 ### Evidence
 
 #### Screenshot 1 — Sprint 1 created with the Story inside it
-
-Add your screenshot here.
+![alt text](screenshots/Sprint1-created-with-story-ass3.png)
 
 ---
 
 #### Screenshot 2 — Active Sprint board showing the Sprint Goal
-
-Add your screenshot here.
+![alt text](screenshots/Active-Sprintboard-showing-sprint-goals-ass3.png)
 
 ---
 
@@ -39,26 +37,23 @@ Add the required footer text (`Pravin Mishra Portfolio v1.0 — Deployed on <DD 
 ### Evidence
 
 #### Screenshot 3 — Jira board showing the Day 1 Sub-task in Done
-
-Add your screenshot here.
+![alt text](screenshots/Jira-board-showing-day1-task-done-ass3.png)
 
 ---
 
 #### Screenshot 4 — Successful Git commit output
-
-Add your screenshot here.
+![alt text](screenshots/Successful-Git-commit-output-ass3.png)
 
 ---
 
 #### Screenshot 5 — EC2 browser view showing the complete footer text, with the URL visible
 
-Add your screenshot here.
+![alt text](screenshots/EC2-browser-showing-complete-footer-with-URL-ass3.png)
 
 ---
 
 #### Screenshot 6 — Jira Story comment showing the Day 1 Daily Scrum update
-
-Add your screenshot here.
+![alt text](screenshots/Jira-Story-showing-Day1-Daily-Scrum-ass3.png)
 
 ---
 
@@ -71,26 +66,23 @@ Update the footer so the deployment date is generated automatically (or updated 
 ### Evidence
 
 #### Screenshot 7 — Code editor showing the footer and date logic or deployment-time template snippet
-
-Add your screenshot here.
+![alt text](screenshots/code-editor-showing-footer.png)
 
 ---
 
 #### Screenshot 8 — EC2 browser view showing the updated footer with the current date
-
-Add your screenshot here.
+![alt text](screenshots/EC2-browser-showing-updated-footer-current-date-ass3.png)
 
 ---
 
 #### Screenshot 9 — README snippet documenting the footer and date behavior
+![alt text](screenshots/README-snippet-showing-footer-behavior.png)
 
-Add your screenshot here.
 
 ---
 
 #### Screenshot 10 — Jira Story comment showing the Day 2 Daily Scrum update
-
-Add your screenshot here.
+![alt text](screenshots/Jira-story-comment-showing-day2-scrum-update-ass3.png)
 
 ---
 
@@ -103,20 +95,17 @@ Improve the footer's spacing, contrast, and readability, then validate it at bot
 ### Evidence
 
 #### Screenshot 11 — Desktop EC2 view showing the polished footer
-
-Add your screenshot here.
+![alt text](screenshots/Desktop-showing-polished-footer-ass3.png)
 
 ---
 
 #### Screenshot 12 — Mobile responsive view showing the footer remains readable
 
-Add your screenshot here.
-
+![alt text](screenshots/Mobile-responsive-view-ass3.png)
 ---
 
 #### Screenshot 13 — Jira Story comment showing the Day 3 Daily Scrum update
-
-Add your screenshot here.
+![alt text](screenshots/Jira-story-comment-showing-day3-scrum-update-ass3.png)
 
 ---
 
@@ -130,7 +119,7 @@ Replace the existing homepage tagline with the required DMI Website call-to-acti
 
 #### Screenshot 14 — EC2 browser view showing "Start your DevOps Journey here" and the clickable "Visit the DMI Website" link
 
-Add your screenshot here.
+![alt text](screenshots/EC2-Browser-showing-Start-your-DevOps-Journey-ass3.png)
 
 ---
 
@@ -144,19 +133,18 @@ Record a two-to-three-minute demo video of the shipped footer, add a retrospecti
 
 #### Screenshot 15 — Burndown Chart for Sprint 1
 
-Add your screenshot here.
+![alt text](screenshots/Burndown-chart-for-sprint1-ass3.png)
 
 ---
 
 #### Screenshot 16 — Jira retrospective comment
-
-Add your screenshot here.
+![alt text](screenshots/Jira-retrospective-comment-ass3.png)
 
 ---
 
 #### Screenshot 17 — Final EC2 browser view showing the complete footer requirement
 
-Add your screenshot here.
+![alt text](screenshots/Final-EC2-browser-showing-complete-footer-requirement-ass3.png)
 
 ---
 
@@ -164,7 +152,7 @@ Add your screenshot here.
 
 Paste your unlisted YouTube or accessible Google Drive demo-video link here:
 
-`Add your URL here`
+https://youtu.be/N4nLG3ghQeg
 
 ---
 
@@ -178,15 +166,14 @@ Publish a LinkedIn post about your five-day mini-Sprint, including your GitHub r
 
 #### LinkedIn Post URL
 
-Paste your LinkedIn post URL here:
 
-`Add your URL here`
+https://www.linkedin.com/posts/ifeoma-akabueze_just-wrapped-a-5-day-mini-sprint-in-jira-ugcPost-7491980246020349953-Ms2g/
 
 ---
 
 #### LinkedIn Screenshot 1 — Published LinkedIn post showing the post content and at least one required link or proof image
 
-Add your screenshot here.
+![alt text](screenshots/Published-linkedin-post-ass3.png)
 
 ---
 

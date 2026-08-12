@@ -19,8 +19,7 @@ Create a private, team-managed Scrum Space named `DevOps Micro-Internship Websit
 ### Evidence
 
 #### Screenshot 1 — Space confirmation or Space sidebar showing the Space name and key
-
-Add your screenshot here.
+![alt text](screenshots/Jira-Space-confirmation-wk5-ass2.png)
 
 ---
 
@@ -33,8 +32,7 @@ Create the Epic `Polish DMI Website UI & Deploy` to group the website UI and dep
 ### Evidence
 
 #### Screenshot 2 — Backlog showing the Epic panel enabled and the Epic visible
-
-Add your screenshot here.
+![alt text](screenshots/Backlog-showing-Epic-panel-wk5-ass2.png)
 
 ---
 
@@ -47,14 +45,12 @@ Create all six required Stories (S1–S6) under the Epic, assign every Story to 
 ### Evidence
 
 #### Screenshot 3 — Backlog showing the Epic and all six Stories under it
-
-Add your screenshot here.
+![alt text](screenshots/Backlog-showing-Epic-6-Stories-wk5-ass2.png)
 
 ---
 
 #### Screenshot 4 — One opened Story showing its Story point estimate, acceptance criteria, and label
-
-Add your screenshot here.
+![alt text](screenshots/Opened-Story-showing-SPE-acceptance-criteria-label.-wk5-ass2.png)
 
 ---
 
@@ -67,14 +63,12 @@ Break down S2 (Primary button color refresh) and S4 (Footer with version and dat
 ### Evidence
 
 #### Screenshot 5 — S2 showing all four Sub-tasks
-
-Add your screenshot here.
+![alt text](screenshots/S2-showing-all-4-Subtasks-ass2.png)
 
 ---
 
 #### Screenshot 6 — S4 showing all four Sub-tasks
-
-Add your screenshot here.
+![alt text](screenshots/S4-showing-all-fourSubtasks-ass2.png)
 
 ---
 
@@ -87,8 +81,12 @@ Apply the `frontend` label to S1, S2, S3, S5, and S6, and the `devops` label to 
 ### Evidence
 
 #### Screenshot 7 — Backlog or Story details showing labels applied to at least two visible Stories
+![alt text](screenshots/Story-details-showing-labels-applied-ass2.png)
 
-Add your screenshot here.
+![alt text](screenshots/Story-details-showing-labels-applied-ass2b.png)
+
+![alt text](screenshots/Story-details-showing-labels-applied-ass2c.png)
+
 
 ---
 
@@ -101,14 +99,12 @@ Create a one-week Sprint, move two or three Stories into it (approximately 3–5
 ### Evidence
 
 #### Screenshot 8 — Sprint 1 before starting, showing the selected Stories and Story Points
-
-Add your screenshot here.
+![alt text](screenshots/Sprint1-showing-selected-stories-ass2.png)
 
 ---
 
 #### Screenshot 9 — Active Sprint board showing the started Sprint and Sprint Goal
-
-Add your screenshot here.
+![alt text](screenshots/Active-Sprint-board-ass2.png)
 
 ---
 
@@ -121,14 +117,12 @@ Filter Jira work by the `frontend` and `devops` labels and review Stories with S
 ### Evidence
 
 #### Screenshot 10 — Filter for label = frontend showing the filtered results
-
-Add your screenshot here.
+![alt text](screenshots/filters-showing-frontend-labels.png)
 
 ---
 
 #### Screenshot 11 — Filter for label = devops showing the filtered results
-
-Add your screenshot here.
+![alt text](screenshots/filters-showing-devops-label-ass2.png)
 
 ---
 
@@ -141,8 +135,7 @@ Locate the Burndown Chart for Sprint 1 so it is ready for later progress trackin
 ### Evidence
 
 #### Screenshot 12 — Burndown Chart page opened for Sprint 1
-
-Add your screenshot here.
+![alt text](screenshots/Burndown-chart-for-sprint1-ass2.png)
 
 ---
 
