@@ -30,8 +30,7 @@ In the Billing Dashboard, create a monthly Cost Budget with a name, amount, and 
 
 #### Screenshot 1 — AWS Budget setup page showing the budget name, budget amount, and alert thresholds
 
-Add your screenshot here.
-
+![alt text](screenshots/AWS-Budget-setup-page.png)
 ---
 
 ### Notes
@@ -40,7 +39,29 @@ Answer the following in your own words:
 
 **1. Why is it important to set up budget alerts when using an AWS account?**
 
-Write your answer here.
+Setting up budget alerts on AWS is one of those small habits that saves people from very unpleasant surprises. A few reasons it matters:
+
+Cost visibility in a pay-as-you-go model
+AWS bills you for what you use, and usage can scale up silently — auto-scaling groups spinning up more instances, a Lambda function looping unexpectedly, or a forgotten test resource running for weeks. Without alerts, the first sign of trouble is often the invoice itself.
+
+Catching mistakes fast
+Common cost blowups come from things like:
+
+Leaving large EC2 instances or RDS databases running when idle
+Misconfigured infrastructure (e.g., an S3 bucket accidentally set to public and getting hammered with requests)
+Data transfer costs from a poorly designed architecture
+Runaway loops in serverless functions that trigger themselves repeatedly
+
+Alerts let you catch these within hours instead of at the end of the billing cycle.
+
+Protection against security incidents
+If credentials or API keys leak, attackers sometimes spin up expensive resources (like GPU instances for crypto mining) on your account. Budget alerts can be an early warning sign of exactly this kind of abuse.
+
+Financial predictability
+For personal projects, students, or small teams, an unexpected several-hundred- or several-thousand-dollar bill can be a real financial hit. Alerts help you stay within what you planned to spend.
+
+Encourages good habits
+Even if you don't hit a limit, seeing regular alerts builds awareness of your actual cloud spend and nudges you toward cleaning up unused resources.
 
 ---
 
