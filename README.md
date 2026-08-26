@@ -83,10 +83,10 @@ Week 04 → Git & GitHub
 [![Week 04 – Git](./badges/week-04.svg)](week-04-git-and-github/)
 
 Week 05 → DevOps Lifecycle & Agile -->
-[![Week 05 – Agile](./badges/week-05.svg)](./week-05-devops-lifecycle/) -->
+[![Week 05 – Agile](./badges/week-05.svg)](./week-05-devops-lifecycle/)
 
-<!-- Week 06 → AWS Cloud -->
-<!-- [![Week 06 – AWS](./badges/week-06.svg)](./week-06-aws-cloud/) -->
+Week 06 → AWS Cloud -->
+[![Week 06 – AWS](./badges/week-06.svg)](./week-06-aws-cloud/)
 
 <!-- Week 07 → Azure Cloud -->
 <!-- [![Week 07 – Azure](./badges/week-07.svg)](./week-07-azure-cloud/) -->
@@ -136,7 +136,7 @@ Week 05 → DevOps Lifecycle & Agile -->
 | 03 | Linux & Bash for DevOps |✅ Completed |✅ Completed| https://www.linkedin.com/posts/ifeoma-akabueze_dmibypravinmishra-agenticai-claudecode-activity-7484718761107861507-g38d? | https://medium.com/@ifeomaohachosim/what-building-an-ai-assisted-linux-health-check-taught-me-about-devops-1d7512d013c5 |
 | 04 | Git & GitHub | ✅ Completed | ✅ Completed | https://www.linkedin.com/posts/ifeoma-akabueze_dmibypravinmishra-agenticai-claudecode-ugcPost-7486547167722115073-U0_Q/? | https://medium.com/@ifeomaohachosim/from-command-line-to-pull-request-my-first-full-git-github-collaboration-workflow-1936893c9b7e |
 | 05 | DevOps Lifecycle & Agile | ✅ Completed | ✅ Completed | https://www.linkedin.com/posts/ifeoma-akabueze_agile-jira-agenticai-ugcPost-7492359869149302784-6rjj/? | https://medium.com/@ifeomaohachosim/building-a-read-only-sprint-health-skill-with-claude-code-and-jira-mcp-0b97ac44c139? |
-| 06 | AWS Cloud | ⬜ Not Started | ⏳ Pending | — | — |
+| 06 | AWS Cloud |✅ Completed |✅ Completed | https://www.linkedin.com/posts/ifeoma-akabueze_aws-cloudcomputing-devops-activity-7497602241529544704-3O59 | https://medium.com/@ifeomaohachosim/building-a-highly-available-two-tier-application-on-aws-02cc0a49c47b |
 | 07 | Azure Cloud | ⬜ Not Started | ⏳ Pending | — | — |
 | 08 | Terraform | ⬜ Not Started | ⏳ Pending | — | — |
 | 09 | Ansible | ⬜ Not Started | ⏳ Pending | — | — |

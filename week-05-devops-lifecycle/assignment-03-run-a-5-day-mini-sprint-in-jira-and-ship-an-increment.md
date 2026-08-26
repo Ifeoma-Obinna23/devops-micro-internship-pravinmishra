@@ -150,7 +150,6 @@ Record a two-to-three-minute demo video of the shipped footer, add a retrospecti
 
 #### Demo Video URL
 
-Paste your unlisted YouTube or accessible Google Drive demo-video link here:
 
 https://youtu.be/N4nLG3ghQeg
 
