@@ -20,7 +20,7 @@ Confirm your Azure CLI is authenticated and can see the VM, network, storage acc
 
 #### Screenshot 1 — `az account show` and `az vm list -d -o table` confirming your subscription and running VM (subscription ID partially blurred)
 
-![alt text](<screenshots/Az-account-show-and-az-vm-list-d -o-table-confirming-your-subscription-and-running-VM-ass7 .png>)
+![alt text](screenshots/Az-account-show-and-az-vm-list-d-o-table-confirming-your-subscription-and-running-VM-ass7.png)
 
 ---
 

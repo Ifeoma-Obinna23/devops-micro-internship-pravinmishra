@@ -74,7 +74,7 @@ Apply least-privilege NSG rules so traffic flows Internet → public entry point
 
 #### Screenshot 7 — Key Vault or approved secret-management configuration (without displaying secret values)
 
-![alt text](<screenshots/Key Vault-or-approved-secret-management-configuration-ass6.png>)
+![alt text](screenshots/Key-Vault-or-approved-secret-management-configuration-ass6.png)
 
 ---
 
@@ -167,7 +167,7 @@ Configure the approved public entry service with health probes and backend pools
 
 ![alt text](screenshots/Internal-application-tier-load-balancing-IP-config-ass6.png)
 
-![alt text](<screenshots/Internal-application-tier load-balancing-backend-config-ass6.png>)
+![alt text](screenshots/Internal-application-tier-load-balancing-backend-config-ass6.png)
 
 ![alt text](screenshots/Internal-application-tier-load-balancing-backend-health-probe-ass6.png)
 ---
