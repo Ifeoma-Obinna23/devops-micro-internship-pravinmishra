@@ -16,7 +16,6 @@ In this assignment, you will deploy the Mini Finance static web application dire
 
 Download and extract the Mini Finance static website files (`index.html`, `style.css`, images, and other assets) from `https://github.com/pravinmishraaws/mini_finance`.
 
-> No screenshot required for this task.
 
 ---
 
@@ -26,7 +25,7 @@ Download and extract the Mini Finance static website files (`index.html`, `style
 
 Create Resource Group `mini-finance-rg` and a globally unique Storage Account named `minifinance<uniqueid>` (Standard performance, LRS redundancy), then enable Static Website Hosting with `index.html` as the index document.
 
-> No screenshot required for this task. Completion is verified through Task 4.
+
 
 ---
 
@@ -35,8 +34,6 @@ Create Resource Group `mini-finance-rg` and a globally unique Storage Account na
 ## Goal
 
 Upload all Mini Finance project files to the `$web` container.
-
-> No screenshot required for this task.
 
 ---
 
@@ -50,7 +47,7 @@ Open the primary endpoint URL and confirm the Mini Finance application, styling,
 
 #### Screenshot 1 — Mini Finance website running in the browser
 
-Add your screenshot here.
+![alt text](screenshots/Mini-Finance-website-running-in-the-browser-ass4.png)
 
 ---
 
@@ -58,7 +55,7 @@ Add your screenshot here.
 
 Paste the Azure Storage static website URL here:
 
-`Add your URL here`
+https://ifyminifinance.z5.web.core.windows.net/
 
 ---
 

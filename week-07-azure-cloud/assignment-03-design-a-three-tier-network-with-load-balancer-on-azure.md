@@ -20,8 +20,7 @@ Create `eb-demo-vnet` (10.0.0.0/16) with `web-subnet` (10.0.1.0/24), `app-subnet
 
 #### Screenshot 1 — Subnet configuration screen showing the three subnets and Bastion subnet (if enabled)
 
-Add your screenshot here.
-
+![alt text](screenshots/Subnet-configuration-screen-showing-the-three-subnets-and-Bastion-subnet-Ass3.png)
 ---
 
 # Task 2 — Deploy the Web VM and Install NGINX
@@ -30,7 +29,6 @@ Add your screenshot here.
 
 Create Ubuntu 22.04 LTS VM `web-nginx` in `web-subnet` with a public IP and inbound SSH (22) and HTTP (80), then install and start NGINX and verify the default page via the VM's public IP.
 
-> No screenshot required for this task. Completion is verified through Task 4.
 
 ---
 
@@ -44,7 +42,7 @@ Create Standard Public Load Balancer `web-public-elb` with frontend IP `web-elb-
 
 #### Screenshot 2 — Load Balancer frontend IP configuration
 
-Add your screenshot here.
+![alt text](screenshots/Load-Balancer-frontend-IP-configuration-ass3.png)
 
 ---
 
@@ -58,7 +56,7 @@ Confirm the NGINX default page is reachable through the Load Balancer's public I
 
 #### Screenshot 3 — Browser showing the NGINX welcome page through the Load Balancer Public IP
 
-Add your screenshot here.
+![alt text](screenshots/Browser-showing-the-NGINX-welcome-page-through-the-Load-Balancer-PIP-ass3.png)
 
 ---
 
@@ -68,7 +66,6 @@ Add your screenshot here.
 
 After capturing all required evidence, delete the `vnet-demo-rg` Resource Group to avoid ongoing charges.
 
-> No screenshot required for this task.
 
 ---
 

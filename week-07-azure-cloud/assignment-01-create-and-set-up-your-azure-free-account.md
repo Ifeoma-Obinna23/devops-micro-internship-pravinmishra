@@ -30,13 +30,13 @@ Confirm successful Azure Portal access and Locate the required services and subs
 
 #### Screenshot 1 — Azure Portal homepage after successful login
 
-Add your screenshot here.
+![alt text](screenshots/Azure-Portal-homepage-after-successful-login.png)
 
 ---
 
 #### Screenshot 2 — "Subscriptions" section showing the "Free Trial" subscription
 
-Add your screenshot here.
+![alt text](screenshots/Subscriptions-section-showing-the-Free-Trial-subscription-ass1.png)
 
 ---
 
@@ -44,7 +44,7 @@ Add your screenshot here.
 
 Write a three-to-four-line paragraph explaining which Azure services you plan to explore first and why.
 
-Write your answer here.
+Since I'm coming from an AWS background, I plan to start with Resource Groups first, as they're the closest concept to how I organize resources in AWS and understanding them will help me map the rest of Azure's structure faster. From there, I'll explore Virtual Machines and Storage Accounts, since they correspond closely to EC2 and S3, letting me compare how compute and storage work differently in Azure. Finally, I want to look at App Service, since it seems like a quicker way to deploy a web app than manually provisioning a VM, similar to what Elastic Beanstalk offers on AWS.
 
 ---
 

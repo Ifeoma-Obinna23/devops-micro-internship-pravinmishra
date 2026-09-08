@@ -20,7 +20,7 @@ Confirm your Azure CLI is authenticated and can see the VM, network, storage acc
 
 #### Screenshot 1 — `az account show` and `az vm list -d -o table` confirming your subscription and running VM (subscription ID partially blurred)
 
-Add your screenshot here.
+![alt text](<screenshots/Az-account-show-and-az-vm-list-d -o-table-confirming-your-subscription-and-running-VM-ass7 .png>)
 
 ---
 
@@ -34,7 +34,7 @@ Create a `CLAUDE.md` for this workspace that tells Claude what the audit covers 
 
 #### Screenshot 2 — `CLAUDE.md` open in your editor showing the project overview, audit workflow, and safety rules
 
-Add your screenshot here.
+![alt text](screenshots/CLAUDE-md-open-in-your-editor-showing-the-project-overview-audit-workflow-and-safety-rules-ass7.png)
 
 ---
 
@@ -47,9 +47,17 @@ Ask Claude Code to read `CLAUDE.md` and propose a read-only, four-check audit pl
 ### Evidence
 
 #### Screenshot 3 — Claude Code showing the four-check plan, with no files created or modified
+![alt text](screenshots/Claude-Code-showing-the-four-check-plan-Check-A-ass7.png)
 
-Add your screenshot here.
+![alt text](screenshots/Claude-Code-showing-the-four-check-plan-B-ass7.png)
 
+![alt text](screenshots/Claude-Code-showing-the-four-check-plan-Check-B-ass7.png)
+
+![alt text](screenshots/Claude-Code-showing-the-four-check-plan-Check-C-ass7.png)
+
+![alt text](screenshots/Claude-Code-showing-the-four-check-plan-Check-D-ass7.png)
+
+![alt text](screenshots/Claude-Code-showing-the-four-check-plan-Check-D-b-ass7.png)
 ---
 
 # Task 4 — Build the Azure Audit Bash Script
@@ -62,13 +70,20 @@ Write a Bash script that runs the four checks from Task 3 using read-only `az` c
 
 #### Screenshot 4 — Your script open in your editor, showing the check functions and the `az` commands they call
 
-Add your screenshot here.
+![alt text](screenshots/Script-open-in-editor-showing-the-check-functions-ass7.png)
 
+![alt text](screenshots/Script-open-in-your-editor-showing-the-check-functions-and-the-az-commands-ass7.png)
+
+![alt text](screenshots/Script-open-in-editor-showing-the-check-functions-and-the-az-commandss-ass7.png)
+
+![alt text](screenshots/Script-open-in-my-editor-showing-the-check-functions-az-commands-ass7.png)
+
+![alt text](screenshots/Scripts-open-in-editor-showing-the-check-functions-and-the-az-commands-ass7.png)
 ---
 
 #### Screenshot 5 — Output of `bash -n` (no syntax errors) and `ls -l` showing the script is executable
 
-Add your screenshot here.
+![alt text](screenshots/Output-of-bash-n-no-syntax-errors-and-ls-l-showing-the-script-is-executable-ass7.png)
 
 ---
 
@@ -82,7 +97,7 @@ Run the script against your live resources and read the report honestly, even if
 
 #### Screenshot 6 — Script output showing your Full Name and all four checks with a PASS, WARN, or FAIL result
 
-Add your screenshot here.
+![alt text](screenshots/Script-output-showing-Full-Name-and-all-four-checks-with-PASS-ass7.png)
 
 ---
 
@@ -96,13 +111,19 @@ Create a Claude Code skill restricted to read-only tools (no `Write`) that runs 
 
 #### Screenshot 7 — Your skill file's frontmatter showing `allowed-tools` without `Write`
 
-Add your screenshot here.
+![alt text](screenshots/skill-files-frontmatter-showing-allowed-tools-without-Write-ass7.png)
 
 ---
 
 #### Screenshot 8 — `/azure-audit` output showing the baseline findings and Claude's explanation
 
-Add your screenshot here.
+![alt text](screenshots/Azure-audit-output-showing-the-baseline-findings-and-Claudes-explanation-ass7.png)
+
+![alt text](screenshots/Azure-audit-output-showing-the-baseline-findings-and-Claude-explanation-ass7.png)
+
+![alt text](screenshots/azure-audit-output-showing-the-baseline-findings-and-Claude-explanation-asss7.png)
+
+![alt text](screenshots/Azure-audit-output-showing-the-baseline-finding-and-Claude-explanation-ass7.png)
 
 ---
 
@@ -116,19 +137,19 @@ Pick one WARN or FAIL finding (or deliberately open an NSG rule to port 22 from 
 
 #### Screenshot 9 — Saved report showing the original finding before the fix
 
-Add your screenshot here.
+![alt text](screenshots/Saved-report-showing-the-original-finding-before-the-fix-ass7.png)
 
 ---
 
 #### Screenshot 10 — Terminal output of the remediation command you ran yourself
 
-Add your screenshot here.
+![alt text](screenshots/Terminal-output-of-the-remediation-command-ass7.png)
 
 ---
 
 #### Screenshot 11 — Second `/azure-audit` run (or report) showing the finding resolved
 
-Add your screenshot here.
+![alt text](screenshots/Azure-audit-run-or-report-showing-the-finding-resolved-ass7.png)
 
 ---
 
@@ -136,7 +157,40 @@ Add your screenshot here.
 
 Compare this assignment to the AWS audit you built in Week 6: which finding categories map to each other across the two clouds, and what stayed exactly the same about the workflow even though the `az`/`aws` commands are completely different?
 
-Add your answer here
+### Comparison with the AWS Audit from Week 6
+
+The Azure audit assignment follows almost the same security-audit structure as the AWS audit from Week 6, but it uses Azure resources and the `az` CLI instead of AWS resources and the `aws` CLI.
+
+| AWS Week 6 Finding                                      | Azure Equivalent                                                                                                               |
+| ------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| S3 public-access settings / public ACLs                 | Storage Account public blob access                                                                                             |
+| Security Groups open to the internet on SSH port 22     | NSG rules open to `0.0.0.0/0` on SSH port 22                                                                                   |
+| Security Groups open to the internet on MySQL port 3306 | NSG rules open to `0.0.0.0/0` on RDP port 3389 — both are checks for unnecessarily internet-exposed management/database access |
+| RDS public accessibility                                | Azure Database for MySQL public network access                                                                                 |
+| EBS volume encryption                                   | Azure VM disk encryption status                                                                                                |
+
+The exact Azure services are different, but the security principles being checked are very similar: **unnecessary public exposure, unrestricted network access, and protection of data at rest**.
+
+### What stayed exactly the same
+
+The **workflow stayed the same even though the CLI commands changed completely**:
+
+**1. Gather →** A Bash script uses read-only cloud CLI commands to collect evidence from the live environment and produces a PASS/WARN/FAIL report.
+
+**2. Analyze →** Claude Code reads the report, explains what each finding means, assesses the security or cost risk, and recommends a remediation. Claude does not make the change itself.
+
+**3. Human Act →** The engineer reviews the recommendation and manually runs the remediation command. The human remains the final decision-maker before any live cloud resource is changed.
+
+**4. Verify →** The audit script is run again to confirm that the finding has actually been resolved.
+
+The same safety principles also remained unchanged. Claude must not execute mutating commands, must not claim a finding without evidence in the audit report, and must never automatically remediate a problem.
+
+Therefore, the main difference between the two assignments is **the cloud provider and the commands used**, not the engineering methodology. AWS uses commands such as `aws ec2 describe-security-groups` and `aws rds describe-db-instances`, while Azure uses corresponding read-only `az` commands such as `az network nsg rule list` and Azure resource queries. The underlying discipline remains:
+
+**Read-only evidence → AI analysis → Human-controlled remediation → Verification.**
+
+This demonstrates that the audit approach is **cloud-agnostic**: the tools and resource names change, but the security principles and human-in-the-loop workflow remain the same.
+
 
 ---
 
