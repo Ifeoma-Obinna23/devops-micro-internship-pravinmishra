@@ -1,6 +1,6 @@
 # Assignment 1 — Create and Set Up Your Azure Free Account
 
-Part of the DevOps Micro Internship (DMI) Cohort 3 with Agentic AI
+Part of the DevOps Micro Internship (DMI) with Agentic AI
 
 ---
 
@@ -48,6 +48,22 @@ Since I'm coming from an AWS background, I plan to start with Resource Groups fi
 
 ---
 
+# Share Your Progress on WhatsApp
+
+## Goal
+
+Share your Azure account setup achievement and DMI Leaderboard progress together in the same WhatsApp Status.
+
+### Evidence
+
+#### Screenshot 3 — Published WhatsApp Status showing your Azure account setup update, automatically generated DMI Leaderboard rank, and personal progress link
+
+Add your screenshot here.
+
+> **Privacy Note:** Do not include payment details, subscription IDs, private phone numbers, or other sensitive information.
+
+---
+
 # Submission Instructions
 
 - Add all required screenshots in your submission
@@ -86,4 +102,4 @@ It helps learners build strong DevOps foundations with hands-on experience.
 
 ---
 
-*This submission is part of DevOps Micro Internship (DMI) Cohort 3 — Agentic AI Track.*
+*This submission is part of DevOps Micro Internship (DMI) — Agentic AI Track.*

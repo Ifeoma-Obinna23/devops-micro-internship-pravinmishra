@@ -1,6 +1,6 @@
 # Assignment 2 — Stand Up Scrum in Jira for the DevOps Micro-Internship Website
 
-Part of the DevOps Micro Internship (DMI) Cohort 3 with Agentic AI
+Part of the DevOps Micro Internship (DMI) with Agentic AI
 
 ---
 
@@ -139,9 +139,25 @@ Locate the Burndown Chart for Sprint 1 so it is ready for later progress trackin
 
 ---
 
+# LinkedIn Post (Required)
+
+## Evidence
+
+#### LinkedIn Post URL
+
+Paste your LinkedIn post URL here:
+
+Add your URL here...
+
+#### Screenshot 13 — LinkedIn Post Showing Your Scrum Project Setup and DMI Leaderboard Progress Link
+
+Add your screenshot here.
+
+---
+
 # Submission Instructions
 
-- Add all 12 required screenshots in the specified order
+- Add all 13 required screenshots in the specified order
 - Full name must be visible in required screenshots
 - Do not expose passwords, verification codes, private email content, account recovery details, or other sensitive information
 ---
@@ -156,6 +172,7 @@ Locate the Burndown Chart for Sprint 1 so it is ready for later progress trackin
 - [ ] Task 6: One-week Sprint 1 started with the required Sprint Goal (Screenshots 8 & 9)
 - [ ] Task 7: Frontend and devops filters demonstrated (Screenshots 10 & 11)
 - [ ] Task 8: Burndown Chart opened for Sprint 1 (Screenshot 12)
+- [ ] LinkedIn post published
 - [ ] Full Name visible in required screenshots
 - [ ] No sensitive data exposed
 
@@ -181,4 +198,4 @@ It helps learners build strong DevOps foundations with hands-on experience.
 
 ---
 
-*This submission is part of DevOps Micro Internship (DMI) Cohort 3 — Agentic AI Track.*
+*This submission is part of DevOps Micro Internship (DMI) — Agentic AI Track.*
