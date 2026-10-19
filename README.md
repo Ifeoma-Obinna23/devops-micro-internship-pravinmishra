@@ -138,7 +138,7 @@ Week 06 → AWS Cloud -->
 | 05 | DevOps Lifecycle & Agile | ✅ Completed | ✅ Completed | https://www.linkedin.com/posts/ifeoma-akabueze_agile-jira-agenticai-ugcPost-7492359869149302784-6rjj/? | https://medium.com/@ifeomaohachosim/building-a-read-only-sprint-health-skill-with-claude-code-and-jira-mcp-0b97ac44c139? |
 | 06 | AWS Cloud |✅ Completed |✅ Completed | https://www.linkedin.com/posts/ifeoma-akabueze_aws-cloudcomputing-devops-activity-7497602241529544704-3O59 | https://medium.com/@ifeomaohachosim/building-a-highly-available-two-tier-application-on-aws-02cc0a49c47b |
 | 07 | Azure Cloud | ✅ Completed | ✅ Completed | https://www.linkedin.com/posts/ifeoma-akabueze_i-just-wrapped-up-an-azure-security-posture-ugcPost-7503141738232889344-HXL6/ |https://medium.com/@ifeomaohachosim/what-a-broken-path-taught-me-about-trusting-automated-security-audits-48e7a322fc7a?|
-| 08 | Terraform | ⬜ Not Started | ⏳ Pending | — | — |
+| 08 | Terraform | ⬜ ✅ Completed | ✅ Completed | https://www.linkedin.com/posts/ifeoma-akabueze_i-spent-the-last-few-days-building-something-ugcPost-7517617177630453760-Ehs8/ | https://medium.com/@ifeomaohachosim/what-a-blocked-terraform-apply-taught-me-about-ai-safety-fc3e3dff21bb |
 | 09 | Ansible | ⬜ Not Started | ⏳ Pending | — | — |
 | 10 | Azure DevOps (CI/CD) | ⬜ Not Started | ⏳ Pending | — | — |
 | 11 | Docker | ⬜ Not Started | ⏳ Pending | — | — |
